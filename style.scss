@@ -1,0 +1,4006 @@
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+//   overflow-x: hidden;
+}
+ul {
+ list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+ 	content: '';
+	content: none;
+ }
+table {
+	border-collapse: collapse;
+ 	border-spacing: 0;
+ }
+
+
+// variables
+$futurabold:'Futura bold';
+$Futura:'Futura New';
+$italic:'Roboto-italic';
+$normal-black:'Roboto-blackmormal';
+$thin:'Roboto-thin';
+$light:'Roboto-light';
+$medium:'Roboto-medium';
+$regular:'Roboto-regularnormal';
+$bold:'Roboto-bold';
+$white:#ffffff;
+$black:#454545;
+$blackdark:#1C0902;
+$heading:#C46508;
+$cold1:#EDA164;
+$cold2:#F9C49A;
+$pink:#F8E1F4;
+$btncolor:#280F06;
+
+
+@mixin flex {display: flex;justify-content: center;}
+@mixin column {display: flex;flex-direction: column;justify-content: center;}
+@mixin spacearound {display: flex;justify-content:space-around;}
+@mixin spacebtwn {display: flex;justify-content:space-between;}
+@mixin spaceeven {display: flex;justify-content: space-around;}
+
+html, body{
+	
+overflow-x: hidden;
+		scroll-behavior: smooth;	
+	
+}
+
+
+
+ .head{position: relative;z-index: 200;display:none;
+
+	  .nav-contact{ display: flex;width:100%;justify-content:space-between;position:fixed;background:$heading;top:0;padding:2% 0%;
+			.call-us {color:white;z-index: 8;display: flex;font-size: 18px;margin-right: 30px;line-height: 1.9;font-family: $regular;
+			&:hover{color: $heading;transition: all 0.2s;}
+			}
+	}
+  
+    .menuopen{top: 1rem;left: 1rem;width: 20px;height: 20px;cursor: pointer;z-index: 1;margin-left:30px;
+			span{display: flex;width: 35px;height: 4px;background-color:white;margin-top: 5px;z-index: 999;
+			
+			}
+			
+                }
+  
+ .nav{ position: fixed;top: 0; left: -40%; width: 40%;height: 100vh;transition: 0.5s;
+
+
+}
+      .nav.active{position: fixed;top: 0;left: 0;width: 470px;height: 740px;background:$pink;transition: 0.5s;z-index: 5;}
+       .nav ul{ position: absolute; top: 45%; transform: translateY(-50%); width: 100%;
+             li {margin-top: 32px;padding-left:38px;
+            a{color: black;text-decoration: none;font-size: 35px;font-family: $medium;letter-spacing: 4px; position: relative;
+				z-index: 0;
+				cursor: pointer;
+
+  &:after,&:before {
+	transition: all .5s;
+  }
+			
+
+				&:hover{color:$heading;}
+			}
+			
+            }
+			  }
+			 
+                  .menuclose{position: absolute;top: 1rem;right: 1rem;width: 18px;height: 18px;cursor: pointer;
+                         span{display: flex;width: 30px;height: 3px;background-color: black;}
+                             }
+                          .menuclose :nth-child(1){position: absolute;left: -2px;top: 7px;transform: rotate(45deg);}
+						  .menuclose :nth-child(2){position: absolute;left: -2px;top: 7px;transform: rotate(135deg);}
+						  .call-us{font-size: 18px;font-family: $regular;text-decoration: none; }
+							}
+							
+// end-header
+
+ 
+
+// start-banner-section
+
+       .banner{background-image: linear-gradient(rgba(#010101,0.6), rgba(#010101,0.6)), url('img/IMG_4608.png');background-position: center;background-size: cover;height: 740px;width: 100%;position: relative;z-index:1;display:flex;
+           .banner-inner{@include column();align-items: center;
+	               p{letter-spacing: 1.8px;line-height: 1.2;font-size: 26px;font-family: 'Roboto-medium';color: white;text-align: center;margin-bottom: 13px;margin-top:80px;}
+					h1{font-size: 90px;margin-bottom: 29px;color: #FFFFFF;font-family: $medium;}
+					.banner-text{margin:0 270px;font-size: 24px;margin-bottom: 36px;font-family: $medium;}
+				
+				}
+		 a{padding:23px 28px;text-decoration: none;color: $black;background-color: white;font-size:22px;font-family: $light;
+		
+		&:hover{background: $heading;color: white;	transition: all 0.2s;}
+		}
+		   }
+
+// end-banner-section
+
+
+.about-all{padding-top: 84px;display: flex;justify-content:space-evenly;
+	
+
+	.about-img{background-image:linear-gradient(rgba(#010101,0.4), rgba(#010101,0.4)), url('img/childrenChurch.png');width: 397px;height: 240px;position: relative;
+		.overlay{ 
+			a{position:absolute;top: 40%;left: 67%;transform: translate(-50%, 50%);font-size: 26px;color: $white;font-family: $bold;z-index: 2;text-decoration: none;width:100%;
+				&:hover{transition: color .2s ease-in-out;color: $heading;}
+			}
+			}
+		}
+
+	.about-img2{background-image:linear-gradient(rgba(#010101,0.4), rgba(#010101,0.4)), url('img/messyChurch.png');width: 397px;height: 240px;position: relative;
+			.overlay{ 
+				a{position:absolute;top: 40%;left: 48%;transform: translate(-50%, 50%);font-size: 26px;color: $white;font-family: $bold;z-index: 2;text-decoration: none;
+					&:hover{transition: color .2s ease-in-out;color: $heading;}
+				}
+				}
+			}
+		
+  .about-img3{background-image:linear-gradient(rgba(#010101,0.4), rgba(#010101,0.4)), url('img/eventsImg.png');width: 397px;height: 240px;margin-left:0;position: relative;
+		.overlay{ 
+			a{position:absolute;top: 40%;left: 49%;transform: translate(-50%, 50%);font-size: 26px;color: $white;font-family: $bold;z-index: 2;text-decoration: none;
+				&:hover{transition: color .2s ease-in-out;color: $heading;}
+			}
+			}
+		}
+	}
+
+
+
+
+
+
+// start-about-section
+.about-allsaints{padding-top: 84px;
+	.a-church{
+	.about-img{margin-bottom:40px;background-image:linear-gradient(rgba(#010101,0.4), rgba(#010101,0.4));
+		img{width: 397px;height: 240px;padding-right: 0;}
+		.overlay{ height: 99%; width:100%;background-color: rgba( #000000,0.30%);top: 0;left: 0;z-index: 1;right: 0;bottom:0;position: absolute;
+		p{position:absolute;top: 40%;left: 45%;transform: translate(-50%, 50%);font-size: 26px;color: $white;font-family: $bold;}
+		}
+
+	}
+
+	}
+}
+.about-us{text-align: center;margin-top: 66px;
+   h3{font-size: 24px;color: $heading;font-weight: $regular;margin-bottom: 20px;font-family: $regular;}
+   h2{font-size: 48px;margin-bottom: 25px;font-family: $regular;}
+   p{margin-bottom: 20px;font-size: 22px;font-family: $regular;line-height: 1.5;}
+   .middle{margin-left:12%;margin-right: 12%;font-family: $regular;}
+}
+
+// end-about-section
+
+
+
+// start-meetings-section
+.meetings{
+	h2{margin: 84px 0 62px 0;text-align: center;font-size: 24px;color: $heading;font-family: $medium;}
+	.meeting{display: flex;justify-content:center;margin-right:0;
+
+
+
+	img{width: 452px;height: 678px;}
+	
+	.card1{width: 327px;height: 330px;background-color: $cold2;margin-left: 22px;outline-offset: -10px;border-radius: 4px;margin-bottom: 18px;text-align: center;outline: 1px solid #FFFFFF;outline-offset: -6px;
+	.date{padding-top: 19px;font-size:22px;font-family:$medium;
+	span{display: block;padding-bottom: 13px;font-size:22px;font-family: $medium;}
+	}
+	p{font-size:22px;line-height: 1.3;font-family: $medium;}
+	.text{margin-top: 13px;margin-bottom: 18px;font-size: 18px;line-height: 1.3;margin-right: 30px;margin-left: 30px;font-family: $regular;}
+	}
+	.card2{width: 408px;height: 466px;background-color: $cold1;margin-left: 22px;outline: 1px solid #FFFFFF;outline-offset: -8px;text-align: center;border-radius: 4px;
+		.date{padding-top: 41px;font-size:22px;font-family:$medium;
+			span{display: block;padding-bottom: 13px;font-size:22px;font-family:$medium;}
+		}
+		p{font-size: 22px;line-height: 1.3;font-family:$medium;}
+			.text{margin-top: 21px;margin-bottom: 39px;font-size: 18px;line-height: 1.3;margin-right: 35px;margin-left: 35px;font-family: $regular;}
+	
+}
+	.sunset{width:408px;height: 192px;margin-left: 22px;margin-top: 18px;
+	img{width:100%;height: 100%;}
+	}
+}
+}
+
+// end-meetings-section
+
+
+
+
+.work-section{margin-top: 122px;
+
+
+.work-inner{height: 701px;background-color:$pink;
+	.infr{width:100%;height: 700px;background-color: $pink;padding-left:45px;z-index: 1;
+		h3{padding-top: 65px;font-size: 26px;color: $heading;font-family: $regular;}
+		 h2{margin: 17px 0 10px 0;font-size: 48px;font-family: $medium;}
+  .donate-inf1{padding-bottom: 18px;padding-right:14px;line-height: 1.3;font-size: 22px;font-family: $regular;}
+  .donate-inf2{padding-right:15px;line-height: 1.3;font-size: 22px;margin-bottom: 50px;font-family: $regular;}
+		.w-btn{border: none;color: white;background-color: $btncolor;font-family: $regular;font-size: 22px;display: flex;justify-content: center;align-items:center;width:263px;height: 55px;text-decoration: none;
+			
+			&:hover{background: $heading;color: $blackdark;	transition: all 0.2s;}
+		}
+  .items{margin-top: 38px;margin-bottom:49px;
+	  img{width: 42px;height: 42px;margin-right: 21px;margin-bottom:49px; }
+  }
+
+
+}
+
+}
+}
+
+video:-webkit-full-screen + #video-controls {position: relative;bottom: 0;}
+input[type="range"] {-webkit-appearance: none !important;position:relative;top:40%;height: 2px;cursor: pointer;}
+
+input[type="range"]::-webkit-slider-thumb {-webkit-appearance: none !important;width: 10px;height: 10px;background-color: #fff;border-radius: 8px;
+}
+input[type="range"]::-webkit-slider-thumb:hover {background-color: #D7263D;} 
+
+#video__container {height: 700px;width: 120%;overflow: hidden;margin-right: 0;padding-right: 0;}
+    
+    #video__caption {position: absolute;font-size: 1.25rem;text-align: center; margin: 0;padding: 0.5rem 0;z-index: 2147483647;cursor: pointer;
+    transition: all .8s ease-in-out;
+    }
+    
+    #video__caption .fa-close {position: absolute;right: 20px;font-size:26px;}
+    
+    #video__play__centerButton {display:flex;position:absolute;justify-content: center;align-items: center; cursor: pointer;
+    opacity: .8; transition: all .8s ease-in-out; top: 25%;left:52%;transform: translate(-50%, 50%);   color: white;border: 8px solid white;border-radius: 93px; padding: 30px 35px;
+    }
+    
+    #video__controls { position: absolute;bottom: 4px;left: 0;right: 0;padding: 5px;text-align: center;z-index: 2147483647;
+    transition: all .8s ease-in-out;
+    }
+    
+    button {border: 0;color: #eee;text-align: center;overflow: hidden;white-space: nowrap; border: none;cursor: pointer;background: transparent;
+    background-size: contain;background-repeat: no-repeat;
+    }
+    button:focus {outline: 0;}
+    button:hover {cursor: pointer;color: #D7263D;}
+    
+    #seek-bar {
+    width: 360px;
+    }
+    
+    #volume-bar {
+    width: 30px;
+    }
+    
+  
+    
+    
+    input[type="range"] {-webkit-appearance: none !important;position:relative;top:40%;height: 2px;cursor: pointer;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {-webkit-appearance: none !important;width: 10px;height: 10px;background-color: #fff;border-radius: 8px;
+    }
+	
+	
+// start-events-section
+.events{margin: 122px 76px 139px 76px;
+	
+	    h3{margin-bottom: 24px;font-size: 24px;color: $heading;font-family: $regular;}
+	     h2{margin-bottom: 43px;font-size: 48px;font-family: $regular;}
+	   .upcoming-events{display: flex;justify-content:space-around;
+		a{
+			img{width: 285px;height: 232px;}
+		}
+	       
+	    .events-infr{margin-left: 35px;
+	        	.event-day{font-size: 38px;font-family: $medium;margin-bottom: 24px;}
+		        .event-category{margin:0 0 11px 0;font-size: 21px;font-family: $regular;}
+				  .event-details{font-size: 16px;line-height: 1.3;font-family: $regular;margin-right: 25px;font-family: $regular;}
+				  .event-date{font-size: 21px;margin-top: 24px;font-family: $regular;}
+	            }
+	      .event-img-first{margin-bottom: 54px;}
+	       .event-img-second{margin-bottom: 29px;}
+
+	}
+	.see-more-btn {font-size: 21px;color: $black;text-decoration: none;
+	
+		 &:hover{color: $heading;}
+	}
+
+	
+	.sunday-time-table{display: flex;margin-left:20px;
+	           p{font-family: $regular;
+		          span{display: block;margin-top: 4px;line-height: 1.3;font-family: $regular;}
+	           }
+	}
+	.service-time{margin-bottom: 16px;margin-top: 3px;margin-left:20px;}
+	        .sunday-time-table{margin-bottom: 24px;
+	         	.fello-day{color: $heading;margin-right:25px;font-size:24px;font-family:$regular;
+		              span{color: $black;}
+		}
+		p{font-size: 18px;}
+		.time{font-size: 18px;font-family:$regular;margin-top: 3px;}
+	}
+	     .menfellowship{display: flex;margin-left:20px;justify-content:center;align-self:center;
+	         .color-card{background-color: $cold2;outline: 1px solid white;outline-offset: -11px;width:400px;height: 560px;padding:18px;border:none;border:0;border-right:none;
+            	.heading-infr{font-size: 21px;font-family: $medium;}
+                	p{padding-top: 25px;line-height: 1.35;font-family: $regular;}
+	}
+	             img{height: 560px;width: 202px;border:none;border:0;border-radius:none;}
+	}
+
+
+}
+
+// end-events-section
+
+
+ 
+
+// start-notices-section
+.notices{background-color: #8DDED2;padding: 100px 71px 114px 71px;
+	   h3{	color: $heading;font-size: 24px;font-family: $medium;}
+	   h2{font-size: 48px;margin-top:29px;margin-bottom: 36px;font-family: $medium;}
+.acc{background-color:white;margin-bottom: 50px;padding:34px 30px 42px 28px; 
+	.accordion_head {cursor: pointer;font-size:21px;font-family:$medium;	transition: color 6s ease-in-out;margin-top:5px;
+	}
+	.accordion_body p {
+		margin-right: 86px;font-size: 18px;font-family: $regular;margin-top: 29px;line-height: 1.3;transition: all 6s;
+		transition: max-height 0.2s ease-out;
+	}
+
+
+.plusminus {transition: color .2s ease-in-out;
+	float:right;
+font-size: 40px;font-family: $thin;position: relative;top:-10px;
+
+}
+	  
+}
+	img{width:507px;height: 478px;margin-top: 161px;}
+}
+
+
+
+// start-latest-sermons
+
+.latest-semons{margin-bottom: 116px;
+	.fas{position: absolute;top:20%;padding:12px;border-radius: 50%;left: 50%;color: white;transform: translate(-50%, 50%);}
+	   .h {margin: 91px 0 30px 0;text-align: center;font-size: 24px;color: $heading;font-family: $medium;text-decoration: none;
+		h3{	&:hover{color: $blackdark;	transition: all 0.2s;}}
+	 
+	}
+	  .latest-h{margin-bottom: 72px;font-size: 48px;text-align: center;font-family: $medium;text-decoration: none;color: $black;} 
+	  img{margin-bottom: 38px;margin-top: 38px;}
+	   .latest-s-header {margin-bottom: 16px;font-size: 36px;font-family: $medium;text-decoration: none;color: $black;
+
+	}
+	.date{font-size: 21px;color: $heading;font-family: $medium;text-decoration: none;margin-top: 16px!important;display: block;}
+}
+
+// end-latest-sermons
+
+
+
+// start-donation-section
+.donations{display: flex;justify-content:center;margin-bottom:125px;
+	        img{width: 100%;height: 700px;}
+	.donation-inner{width:100%;height: 700px;background-color: $pink;padding-left:45px;
+		h3{padding-top: 87px;font-size: 24px;color: $heading;font-family: $medium;}
+		h2{margin: 17px 0 24px 0;font-size: 48px;font-family: $medium;}
+	.donate-infr1{padding-bottom: 30px;padding-right:10px;line-height: 1.3;font-size: 22px;font-family: $regular;}
+		.donate-inf2{padding-right:40px;line-height: 1.3;font-size: 22px;margin-bottom: 57px;font-family: $regular;}
+		.btn{text-decoration: none;color: white;background-color: $btncolor;font-family: $medium;display: flex;justify-content: center;align-items: center;width: 263px;height: 55px;font-size: 22px;
+			&:hover{background: $heading;color: $blackdark;	transition: all 0.2s;}
+		}
+	}
+}
+
+// end-donations-section
+
+
+
+// // start-payments-section
+
+ .payments{margin: 0 69px;
+ img{width:200px;height:224px;margin-right: 30px;}
+
+ .payments-inner{@include flex();
+ .snap-details{margin-right: 20px;margin-bottom:29px;
+ 	p{line-height: 1.4;font-size: 12px;font-family: $futurabold;}
+ 	.snap-header{margin-bottom: 25px;font-family: $bold}
+	span{display: block;font-size: 12px;font-family: $futurabold;}
+ 	.middle{margin-bottom: 25px;line-height: 1.4;}
+
+ }
+
+ }
+ .banking-infr{font-size: 12px;font-family: $Futura;margin-bottom:25px;
+span{display: block;line-height: 1.3;}
+ }
+ .banking-information{ padding-left: 122px;
+
+.banking-head{margin-bottom:25px;font-size: 12px;font-family: $bold;}
+.bank-details {@include spacebtwn();
+.bank-type{
+ 	p{font-family: $futurabold;line-height: 17px;font-size: 12px;}
+ }
+ .reference{	
+	p{font-family: $futurabold;line-height: 1.3;font-size: 12px;
+	span{display: block;font-family: $Futura;}
+	}
+
+ }
+ .number{
+		p{font-family: $futurabold;line-height: 1.3;font-size: 12px;}
+ 	}
+}
+ .PBO-number{margin-top: 50px;font-family: $futurabold;font-size: 12px;}
+
+ }
+
+ }
+// // end-payments
+
+// // line
+ .line{width:90%; height: 1px;background-color:#979797;display: flex;justify-content: center;margin:65px;}
+
+
+
+// our-team
+.our-team{display: flex;justify-content:center;margin-top:161px;
+	img{width: 100%;height: 700px;}
+	.card{width:100%;height: 700px;background-color: $pink;padding-left:45px;
+		h3{padding-top: 87px;font-size: 24px;color: $heading;font-family: $medium;}
+		h2{margin: 17px 0 24px 0;font-size: 48px;font-family: $medium;}
+	 .donate-infr1{padding-bottom: 30px;line-height: 1.3;font-size: 22px;font-family: $regular;}
+	  .donate-inf2{line-height: 1.3;font-size: 22px;margin-bottom: 70px;font-family: $regular;}
+		a{margin-top: 36x;text-decoration: none;color: white;background-color: $btncolor;display:flex;justify-content: center;width: 263px;height: 55px;font-size: 22px; padding-top: 10px;font-family: $medium;
+			&:hover{background: $heading;color: $blackdark;	transition: all 0.2s;}
+		}
+	}
+}
+// end-our-team
+
+
+// start-location-section
+.location{margin-top:183px;background-color: #EBE6DD;padding:0 71px;
+	h3{padding-top: 76px;font-size: 26px;font-family: $medium;color: $heading;padding-bottom: 12px;}
+	h2{font-size: 48px;font-family: $medium;margin-bottom: 53px;}
+	.location-img{padding-top: 93px;width: 650px;margin-bottom: 39px;object-fit: cover;height:398px;}
+	.location-details{
+		.location-heading{font-size: 36px;font-family: $medium;margin-bottom: 24px;}
+		.location-infr{font-size: 16px;font-family: $regular;margin-bottom: 30px;line-height: 1.3;word-spacing: 6px;margin-right: 10%;}
+		p{font-size: 12px;font-family: $medium;line-height: 1.3;}
+		.digits{margin: 25px 0 25px 0;font-family: $medium;}
+	}
+	.map{padding-bottom: 92px;
+		
+		img{width: 562px;object-fit: contain;}
+	}
+}
+// end-location-page
+
+
+// start-footer-section
+.footer{margin:94px 105px 55px 105px;
+   .logo{display: flex;margin-bottom:47px;
+      img{width: 93px;height: 82px;margin-right: 34px;}
+      p{font-size: 26px;font-family: $medium;}
+}
+
+.contact-details{
+	p{margin-bottom: 23px;font-family:$Futura;font-size:15px;
+		span{display: block;}
+	}
+
+}
+.contact-form{
+	p{font-size: 24px;font-family: $medium;margin-left:40px;}
+	 input:focus{outline:0;}
+	 textarea:focus{outline:0;}
+    input[type="text"]{font-size: 15px;color: #F0F0F0;width: 100%;height:45px;border: 1px solid #F0F0F0;margin-top:25px;margin-bottom: 20px;padding-left: 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+     input[type="email"]{font-size: 15px;color: #F0F0F0;width: 100%;height: 45px;border: 1px solid #F0F0F0;margin-bottom: 20px;padding-left: 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+    textarea{width: 100%;height: 70px;border: 1px solid #F0F0F0;margin-bottom: 20px;color: #F0F0F0;font-size: 15px;padding: 15px 0 0 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+	.send {text-decoration: none;color: white;background-color: $btncolor;height: 45px;width: 200px;font-size: 20px;font-family: $medium;border: none;
+		&:hover{background: $heading;color: $blackdark;	transition: all 0.2s;}
+	}
+
+}
+.additional-infr{margin-left:71px;position: relative;
+	.additional-infr-heading{font-size: 24px;font-family: $medium;margin-bottom: 20px;}
+	  .links{display: flex;flex-direction: column;
+		 a{font-family: $regular;font-size: 22px;text-decoration: none;color: $black;width: fit-content;
+			margin: 0 0 14px 0; position: relative;
+			&:hover{font-family: $bold;}
+	
+		
+		  }
+		}
+	}
+	
+	}
+
+// children's-church-page
+		
+
+		.children-church-banner{ background-image: linear-gradient(rgba(#010101,0.6), rgba(#010101,0.6)), url('img/childrensChurchHero.png');background-position: center;background-size: cover;height: 740px;width: 1440px;position: relative;z-index:1;
+	
+			.banner-inner{@include column();margin-left:71px;
+				p{margin-top: 283px; color: #FFFFFF;font-size: 26px;margin-bottom: 30px;font-family: $medium;}
+				h1{font-size: 90px;color: #FFFFFF;font-family: $medium;}
+			
+			}
+		
+			}
+
+			.about-children-church{margin: 100px 72px;margin-top:100px;
+			img{height: 406px;}
+			.iconi{color: white;position: absolute;
+				top: 35%; left:45%;}
+
+			.children-heading{margin-bottom: 6px;font-size: 21px;font-family: $bold;}
+			p{font-family: $regular;font-size: 19px;line-height: 1.3;}
+			ol{font-size: 20px;margin: 12px 12px;font-family: $regular;line-height: 1.3;margin-left: 38px;}
+			}
+
+// activities-for-children
+			.activities-for-children{margin-bottom: 137px;
+			}
+
+// .church-activities-for-children
+			.church-activities-details{line-height: 1.3;text-align: center;
+				.detail1{margin:0 13% 2% 13%;font-size: 20px;font-family: $regular;}
+				.detail2{margin:2% 12% 2% 12%;font-size: 20px;font-family: $regular;line-height: 1.3;}
+				.detail3{margin:2% 10% 2% 10%;font-size: 20px;font-family: $regular;}
+				.detail4{margin:2% 10% 2% 10%;font-size: 20px;font-family: $regular;}
+				
+			}
+			.gallery{margin-top: 149px;margin-bottom:6px;
+			
+			img{height: 468px;object-fit: cover;padding:0;}
+		}
+
+// end-activities-for-children
+
+
+// start-semons-page
+
+			.sermons-banner{ background-image: linear-gradient(rgba(#010101,0.6), rgba(#010101,0.6)), url('img/sermonsHero.png');background-position: center;background-size: cover;height: 740px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+
+				.banner-inner{@include column();margin-left:71px;
+					p{margin-top: 283px; color: #FFFFFF;font-size: 26px;margin-bottom: 30px;font-family: $medium;}
+					h1{font-size: 90px;color: #FFFFFF;font-family: $medium;}
+				
+				}
+			
+				}
+				.our-latest-semons{margin: 104px 165px 153px 165px;
+					.sermon-heading{margin-bottom: 62px;font-family: $medium;font-size: 48px;color: $black;}
+					.sermons-details{ display:flex;flex-direction:row;justify-content: center;position:relative;
+						.sermons-img{
+							.fas{position: absolute;
+							top: 38%; left:25%;color: white;font-size: 80px;}
+						}
+					
+					
+					img{width: 624px;}
+					.sermons-inner{margin-left: 52px;
+					
+						.sermon-heading2{font-family: $bold;font-size: 48px;text-decoration: none;color: $black;}
+						.sermon-infr{font-size: 18px;font-family: $regular;line-height: 1.3;margin-right: 10px;margin-bottom: 24px;margin-top: 24px;}
+						 .date{font-size: 18px;font-family:$regular;margin-top:24px;text-decoration:none;color:black;
+							 span{color: $heading;font-family:$regular;font-size: 18px;}
+						 }
+						 
+						
+						.btn{background: black;font-size: 18px;color:rgb(193, 193, 193);padding:11px 27px 11px 17px;margin-top: 20px;font-family: $regular;
+						&:hover{background-color: $heading;color:black;transition: all 0.2s;}
+						
+						}
+						
+						
+						}
+
+
+					
+				}
+			}
+
+
+				.latest-semons{margin-bottom: 116px;
+					h3{margin: 91px 0 30px 0;text-align: center;font-size: 24px;color: $heading;}
+					.heading3{margin-bottom: 72px;font-size: 36px;text-align: center;text-decoration: none;color: $black;font-family: $medium;} 
+					img{margin-bottom: 38px;}
+					p{margin-bottom: 16px;font-size: 36px;font-family: $regular;
+			  
+				  }
+				  .date{font-size: 21px;color: $heading;font-family: $medium;}
+				  .sermon-details{font-size: 18px; font-family: $regular;margin-top:8px;}
+				  .see-earlier{text-decoration: none;text-align: center;font-size: 16px;color:$heading;align-self:center;display:flex;justify-content:center;font-family: $medium;margin-top: 23px;
+					&:hover{color:black;transition: all 0.2s;}
+				}
+				.line{background-color: #1C0902;width:6%; height: 3px;margin-top: 15px;position: absolute;left: 42.2%;margin-bottom: 52px;
+					
+				}
+			  }
+			  
+// end-latest-sermons
+ 
+// start-donations-page
+
+			//   church-funds
+			.church-funds{
+				.church-funds-inner{text-align: center;margin: 88px 72px 0 72px;
+				h3{font-size: 24px;color: $heading;margin-bottom: 36px;font-family: $medium;}
+				h2{font-size: 48px;margin-bottom: 39px;font-family: $medium;}
+				p{font-size: 22px;line-height: 1.3;margin:39px 60px 51px 60px;font-family: $regular;}
+				img{width: 100%;}
+		}
+
+		 .raised-funds{margin: 72px 71px 39px 72px;background-color:#EBE6DD;padding: 109px 48px;
+
+			.line1{width:100%; height: 1px;background-color:#979797;padding:0 109px;margin-top: 5px;}
+			.line2{background-color: $black;width:80%; height: 3px;bottom:-125%;
+				
+			}
+			.milestone{display: flex;justify-content: flex-end;margin-right: 230px;color: $heading;
+
+			}
+			.raised-funds-details{display: flex;justify-content: space-between;
+			p{margin-top: 33px;font-size: 21px;font-family: $regular;color: #1C0902;}
+			}
+		
+		}
+	.funds-btn {text-decoration: none;color: #EBE6DD;font-size: 24px;padding: 12px 20px;background-color: $blackdark;margin-left: 72px;font-family: $medium;}
+			}
+
+			.message{ 
+			h2{font-size: 48px;margin:116px 0 51px 0;text-align: center;font-family: $medium;}
+			p{font-size: 22px ;font-family:$regular;line-height: 1.3;text-align: center; margin: 0 75px 51px 72px ;}
+			}
+// end-donations-page
+
+
+// events-page
+.event-banner{ background-image: linear-gradient(rgba(#010101,0.6), rgba(#010101,0.6)), url('img/peopleOutside.png');background-position: center;background-size: cover;height: 740px;width: 100%;position: relative;z-index:1;
+	
+	.events-banner-inner{@include column();margin-left:71px;
+		p{margin-top: 283px; color: #FFFFFF;font-size: 26px;margin-bottom: 30px;font-family: $medium}
+		h1{font-size: 90px;color: #FFFFFF;font-family: $medium;}
+	
+	}
+
+	}
+
+	// comingup-events
+	.comingup-events{margin:60px 71px 0 71px;
+		h2{margin: 100px 0 83px 0;font-size: 48px;font-family: $regular;}
+		img{width:622px;height: 460px;margin-bottom:83px;}
+		.event-inner1{margin-top:235px;margin-left:80px;
+			h3{margin-bottom: 18px;font-family: $medium;font-size: 38px;}
+		.event-date{margin-top:21px;margin-bottom: 11px;font-family: $regular;font-size: 21px;}
+		.event-heading{font-size: 21px;font-family: $regular;}
+		.event-time{margin-bottom: 27px;font-size: 21px;font-family: $regular;}
+		.direction{font-size: 21px;font-family:$regular;
+			span{display: block;}
+		}
+		.event-infr{margin-top: 27px;font-size: 16px;font-family: $regular;line-height: 1.3;}
+	     
+		}
+
+		.events-inner2{@include flex();
+		img{width: 285px;height: 223px;}
+		.event-details{margin-left:35px;
+		 h3{font-size: 21px; font-family: $regular;margin-bottom: 11px;}
+		 .day{font-size: 38px;margin-bottom: 19px;font-family: $medium;}
+		 .event-infr{ font-size: 16px;font-family: $regular;line-height: 1.3;margin-right: 66px;}
+		 .time{margin-top: 54px;font-size: 21px; font-family: $regular;}
+		}
+		}
+	}
+
+	// team-page
+	.the-team{margin: 0 38px;
+		h2{text-align: center;font-size: 48px;margin-bottom: 50px;font-family: $medium;}
+		.header{text-align: center;color: $heading;margin-top: 100px;font-size: 24px;margin-bottom: 23px;font-family: $medium;}
+		p{color: $black;}
+// .team-inner{
+	 .t{img{width: 100%;}
+		h3{font-size: 36px;margin:15px 0 15px 0;font-family: $medium;}
+		.lead-pastor{color: $heading;font-size: 24px;font-family: $regular;}
+		.pastor-infr{font-size: 18px;color: $black;font-family: $regular;margin:15px 0 50px 0;line-height: 1.3;}
+
+	}
+	
+}
+	
+	// start-messy-page
+	.messy-banner{ background-image: linear-gradient(rgba(#010101,0.6), rgba(#010101,0.6)), url('img/messChurchHero.png');background-position: center;background-size: cover;height: 740px;width: 1440px;position: relative;z-index:1;margin-bottom:48px;
+	
+		.banner-inner{@include column();margin-left:71px;
+			p{margin-top: 283px; color: #FFFFFF;font-size: 26px;margin-bottom: 30px;font-family: $medium;}
+			h1{font-size: 90px;color: #FFFFFF;font-family: $medium;}
+		
+		}
+	
+		}
+
+		// about-messy-church
+		.about-messy-church{
+			img{height: 285px;}
+			.heading{margin-top: 100px;font-family: $regular;font-size: 22px;margin: 48px 0 24px 0;}
+			h2{font-size: 72px;font-family: $regular;margin-bottom: 12px;}
+			p{font-size: 22px;font-family: $italic;}
+
+			.about-messy-details{margin-top: 74px;
+				p{font-size: 22px;font-family: $regular;line-height: 1.3;margin: 22px 72px  0 72px;}
+			}
+			
+		}
+
+		// start-testimonials
+		.testimonials{margin: 101px 72px 0 72px;
+		 img{height:406px;}
+		 	.fas{color: white;position: absolute;
+				top: 40%; left:45%;}
+		 .test-infr{
+
+			h4{font-size: 24px;margin: 14px 0 12px 0;font-family: $medium;}
+			.test-details{font-family: $regular;font-size: 22px;line-height:1.3;margin-bottom: 20px;}
+			.further-details{font-size: 21px;font-family: $medium;}
+		 }
+		}
+
+
+
+			
+
+		
+// start-contact-page
+
+.about-church{margin-top: 102px;margin-bottom:93px;display:flex;justify-content:center;
+	.about-church-inner{display: flex;
+	   img{width: 285px;height: 224px;}
+	   .minister-details{margin-left: 50px;
+	   .heading{font-size: 36px;margin-bottom: 21px;font-family: $medium;}
+		p{font-size: 22px;font-family:$medium;
+		 span{display: block;font-family:$medium}
+	   // }
+	   .number{font-size: 18px;font-family: $regular;margin-top: 6px;}
+	   p{width:100%;}
+   
+	   }
+   }
+}
+   
+	   .church-details{margin-left: 52px;margin-right:auto;
+	   
+		   .heading{font-size: 36px;margin-bottom: 9px;font-family: $medium;}
+		   .days{font-size: 18px; font-family: $regular;}
+		   .name{font-size: 22px;margin: 17px 0;font-family:$medium;}
+		   p{font-size: 18px; font-family: $regular;line-height:22px;
+			   span{display: block;font-size: 18px; font-family: $regular;}
+		   }
+	   }
+	}
+// .about-church{display:flex;justify-content: center;}
+
+
+
+   
+
+// start-wardens-section
+
+.wards{margin: 0 72px 66px 72px;
+   h2{font-size:48px;margin-bottom: 66px;font-family: $medium;}
+   .wards-inner{  display: flex;justify-content:space-between;flex-direction:row;flex-wrap:wrap;
+   .ward{display: flex;flex-direction: row;justify-content:center;
+	   p{margin-left:47px;font-size:22px;margin-top:37px;font-family:$medium;
+		   span{display: block;margin-top:20px; font-size: 18px; font-weight: $regular;}
+	   }
+	   .w-number{font-weight: $regular;}
+	   img{width:150px;height: 175px;object-fit: cover;}
+ .w-number{font-family: $regular;}
+   }
+   }
+}
+
+
+// start-request-section
+   .requests{display: flex;align-self:center;flex-direction:column;margin-left:5%;
+	   h2{font-size: 48px; margin-bottom: 72px;font-family: $medium;}
+	   .req{display: flex;justify-content:space-evenly;align-items:center;flex-direction:row;
+
+	   
+		   .req-inner{margin-bottom:58px;display:flex;
+		   img{width: 285px;margin-right: 52px;}
+		.req-infr{ 
+		   .heading{font-size: 36px;margin-bottom: 27px;font-family:$medium;
+		   span{display: block;}
+		   }
+	   .number{font-size: 18px;margin-top:31px;display: block;font-family: $regular;}
+	   p{font-size: 22px;font-family: $medium;}
+		   }
+		   }
+	   }
+   }
+   
+   
+
+   // end-contact-page
+
+			
+
+   
+		
+
+@media (max-width: 575.98px){ 
+// start-header
+ .head{position: relative;
+	 .nav-contact{position:fixed;background:$heading;top:0;padding:6%;
+      .menuopen{padding-top:6px;margin-left:0;
+		  span{display: flex;width: 20px;height: 2px;margin-top: 3px;z-index: 999;
+		  
+		  }
+			  }
+			   .call-us{padding-right: 12%;}
+			}
+.nav{ position: fixed;top: 0; left: -40%; width: 40%;height: 100vh;transition: 0.5s;}
+	.nav.active{position: fixed;top: 0;left: 0;width: 220px;height: 100vh;background:$pink;transition: 0.5s;z-index: 999;}
+	 .nav ul{ position: absolute; top: 45%; transform: translateY(-50%); width: 100%;
+		   li {margin-top: 32px;padding-left:10px;
+		  a{color: black;text-decoration: none;font-size: 16px;}
+		  }
+			}
+				.menuclose{position: absolute;top: 1rem;right: 1rem;width: 18px;height: 18px;cursor: pointer;
+					   span{display: flex;width: 20px;height: 2px;background-color: black;}
+						   }
+						.menuclose :nth-child(1){position: absolute;left: -2px;top: 7px;transform: rotate(45deg);}
+						.menuclose :nth-child(2){position: absolute;left: -2px;top: 7px;transform: rotate(135deg);}
+						.call-us{font-size: 16px!important;position: relative;left: 58px;right: -95px;}
+						  }
+						  
+// end-header
+
+
+
+
+
+	.banner{background-size: cover;height: 550px;width:100%;
+		
+	.banner-inner{align-items: center;
+		p{font-size: 20px;margin-bottom: 20px;line-height: 1.3;margin-top: 120px;}
+		h1{font-size: 40px;margin-bottom: 20px;}
+		.banner-text{margin: 0 28px;text-align: center;font-size: 20px;margin:  0 49.9px 40px 49.9px;
+		}
+	}
+	a{padding:10px 10px;text-decoration: none;color: $black;background-color: white;font-size: 18px;}
+	}
+
+
+	// start-about section
+
+
+
+.about-all{padding-top: 84px;display: flex;justify-content:center;flex-direction:column;text-align:center;align-self:center;align-items:center;
+	.about-img{width: 300px;height: 240px;margin-bottom:25px;
+	.overlay{ 
+		a{left: 49%;font-size: 20px;}
+		}
+	}
+
+		.about-img2{width: 300px;height: 240px;margin-bottom:25px;
+			.overlay{ 
+				a{position:absolute;top: 40%;left: 45%;transform: translate(-50%, 50%);font-size: 20px;color: $white;font-family: $bold;z-index: 2;width:100%;}
+				}
+			}
+		
+        .about-img3{width: 300px;height: 240px;margin-bottom:25px;
+		.overlay{ 
+			a{top: 40%;left: 48%;transform: translate(-50%, 50%);font-size: 20px;color: $white;font-family: $bold;z-index: 2;width: 100%;width:100%;}
+			}
+		}
+	}
+
+
+.about-us{text-align: center;margin:0 17px;
+   h3{font-size: 24px;color: $heading;font-weight: $regular;margin-bottom: 20px;font-family: $regular;}
+   h2{font-size: 34px;margin-bottom: 25px;font-family: $regular;}
+   p{font-size: 18px;font-family: $regular;text-align: center;display: flex; justify-content:center;}
+   .middle{font-family: $regular;margin: 0 0 20px 0;display: flex; justify-content:center;}
+}
+
+
+
+// meetings
+.meetings{margin: auto;
+	h2{margin: 84px 0 20px 0;text-align: center;font-size: 24px;color: $heading;}
+	.meeting{display: flex;justify-content:center;flex-direction:column;
+
+
+
+	img{height: 438px;object-fit: cover;display: none;}
+	.card1{margin:  20px auto ;}
+	
+	.card2{width: 360px;margin:auto;
+		.date{padding-top: 20px;font-size:22px;
+			span{display: block;padding-bottom: 13px;font-size:22px;}
+		}
+		p{font-size: 22px;line-height: 1.3;}
+			.text{margin: 20px 33px 20px 33px;font-size: 18px;line-height: 1.3;font-family: $regular;}
+	
+}
+	.sunset{width: 100%;margin-left:0;margin-top: 35px;display: none;}
+}
+}
+
+
+
+.work-section{margin-top: 122px;
+
+	.ourwek{font-display: flex;flex-direction:column-reverse;
+
+	
+
+	.work-inner{height: 761px;background-color:$pink;display:flex;order:1;
+		.infr{background-color: $pink;padding-left:45px;z-index: 1;height:0;
+			h3{padding-top: 65px;font-size: 26px;color: $heading;font-family: $regular;}
+			 h2{margin: 17px 0 10px 0;font-size: 30px;font-family: $medium;}
+	  .donate-inf1{padding-bottom: 18px;padding-right:14px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+	  .donate-inf2{padding-right:15px;line-height: 1.3;font-size: 20px;margin-bottom: 46px;font-family: $regular;}
+			.w-btn{border: none;color: white;background-color: $btncolor;font-size: 22px;display: flex;justify-content: center;align-items:center;width:305px;height: 55px;padding: 15px 0;text-decoration: none;
+			
+			}
+	  .items{text-align: center;margin-top:48px;
+		  img{width: 42px;height: 42px;margin-right: 21px;margin-bottom:49px; }
+	  }
+	
+	
+	}
+	
+	}
+	}
+}
+	
+	video:-webkit-full-screen + #video-controls {position: relative;
+	bottom: 0;
+	}
+	
+	
+	input[type="range"] {-webkit-appearance: none !important;position:relative;top:40%;height: 2px;cursor: pointer;
+	}
+	
+	
+#video__container {height: 500px;width:100%;overflow: hidden; }
+		
+		
+#video__play__centerButton {display:flex;position:absolute;justify-content: center;align-items: center;cursor: pointer;opacity: .8;
+transition: all .8s ease-in-out;top: 19%;left:50%;	transform: translate(-50%, 50%);color: white;border: 8px solid white;border-radius: 93px;padding: 30px 35px;
+		}
+		
+		#video__controls {position: absolute;bottom: 4px;left: 0;right: 0;padding: 5px;text-align: center;	z-index: 2147483647;transition: all .8s ease-in-out;
+		}
+		
+		button {border: 0;color: #eee;text-align: center;overflow: hidden;white-space: nowrap;border: none;cursor: pointer;background: transparent;
+		background-size: contain;background-repeat: no-repeat;
+		}
+		#seek-bar {
+			width: 200px!important;
+			}
+		
+		
+	
+	
+
+
+// events
+.events{margin: 90px 0 90px 0;
+	
+	h3{font-size: 24px;margin-left: 15px;}
+	h2{font-size: 35px;margin-left: 15px;}
+	.upcoming-events{
+		a{
+			img{width: 158px;height: 201px;margin-left: 15px;margin-right: 0;}
+		}
+	
+	.events-infr{margin-left: 35px;
+		.event-day{font-size: 18px;}
+		.event-category{margin:0 0 11px 0;font-size: 20px;width: 100%;}
+		.event-details{font-size: 16px;line-height: 1.2;margin-bottom: 15%;font-family: $regular;margin-right: 	10%;}
+		.event-date{font-size:18px;}
+	            }
+	.event-img-first{margin-bottom: 54px;object-fit: cover;}
+	.event-img-second{margin-bottom: 29px;object-fit: cover;}
+	
+
+	}
+	.see-more-btn{margin-left: 15px;}
+	
+	
+	.sunday-time-table{display: flex;
+	p{
+		span{display: block;margin-top: 4px;}
+	}
+	}
+	.service-time{margin-bottom: 16px;margin-top: 40px;margin-left: 10px;}
+	.sunday-time-table{margin-bottom: 24px;
+		.fello-day{color: $heading;margin-right:25px;font-size:24px;margin-left:15px;
+		span{color: $black;}
+		}
+		p{font-size: 16px;margin-right: 10%;}
+	}
+	.menfellowship{
+	.color-card{margin: auto;width:100%;margin-right:19px;
+	.heading-infr{font-size: 18px;}
+	p{font-size: 16px;line-height: 1.2;margin-bottom: 0;}
+	
+	}
+	img{display:none;}
+	}
+
+
+}
+
+
+
+// start-notices-section
+.notices{background-color: #8DDED2;padding: 80px 20px 50px 20px;
+	h3{	color: $heading;font-size: 24px;font-family: $medium;}
+	h2{font-size: 35px;margin-top:29px;margin-bottom: 36px;font-family: $medium;}
+.acc{background-color:white;margin-bottom: 50px;padding:34px 30px 42px 28px; 
+ .accordion_head { cursor: pointer;font-size:19px;font-family:$medium;padding-left: 0;
+ }
+ .accordion_body p {
+	 margin-right: 10px;font-size: 17px;font-family: $regular;margin-top: 29px;line-height: 1.3;
+ }
+
+
+.plusminus {
+ float:right;
+font-size: 24px;font-family: $thin;position: relative;top:-6px;
+
+}
+   
+}
+ img{display: none;}
+}
+
+// end notices-section
+
+
+
+// start-latest-sermons-section
+.latest-semons{margin-bottom: 50px!important;text-align:center;
+	.fas{position: absolute;top:17%;padding:12px;border-radius: 50%;left: 50%;color: white;}
+	  h3{margin: 91px 0 20px 0;text-align: center;font-size: 24px;color: $heading;}
+	  h2{font-size: 30px!important;text-align: center;margin-bottom: 0!important;} 
+	.date{font-size: 21px;color: $heading;margin-bottom: 0!important;}
+}
+// end-latest-sermons-section
+
+
+// start-donation-section
+.donations{display: flex;justify-content:center;margin-bottom:125px;
+	img{width: 100%;height: 700px;display: none;}
+.donation-inner{width:100%;height: 620px;background-color: $pink;padding-left:45px;
+h3{padding-top: 87px;font-size: 24px;color: $heading;font-family: $medium;}
+h2{margin: 17px 0 24px 0;font-size: 35px;font-family: $medium;}
+.donate-infr1{padding-bottom: 30px;padding-right:10px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+.donate-inf2{padding-right:30px;line-height: 1.3;font-size: 20px;margin-bottom: 57px;font-family: $regular;}
+.btn{text-decoration: none;color: white;background-color: $btncolor;font-weight: $medium;display: flex;justify-content: center;align-items: center;width: 263px;height: 55px;font-size: 22px;}
+}
+}
+// end-donations-section
+
+
+
+// // start-payments-section
+.payments{margin: 20% 0 0 0;
+	img{width:130px;height:200px;margin-right: 25px;}
+   
+	.payments-inner{@include flex();
+	.snap-details{margin-left: 0;margin-bottom:1px;
+		p{line-height: 1.3;font-size: 12px;font-family: $futurabold;}
+		.snap-header{margin-bottom: 12px;font-family: $bold}
+	   span{display: block;font-size: 12px;font-family: $futurabold;}
+		.middle{margin-bottom: 12px;line-height: 1.3;}
+   
+	}
+   
+	}
+	.banking-infr{font-size: 12px;font-family: $Futura;margin-bottom:25px;
+   span{display: block;}
+	}
+	.banking-information{ padding-left: 0;margin-top:49px;
+   
+   .banking-head{margin-bottom:20px;font-size: 12px;font-family: $bold;}
+   .bank-details {@include spacebtwn();
+   .bank-type{
+		p{font-family: $futurabold;line-height: 1.3;font-size: 12px;}
+	}
+	
+	.number{
+		   p{font-family: $futurabold;line-height: 17px;font-size: 12px;}
+		}
+   }
+	.PBO-number{margin-top: 30px;font-family: $futurabold;font-size: 12px;margin-bottom: 20%;}
+   
+	}
+   
+	}
+	.line{width:90%; margin: auto;}
+
+   // // end-payments-section
+   
+  
+	
+   
+   // our-team-section
+   .our-team{display: flex;justify-content:center;margin-top:120px;
+	   img{display: none;}
+	   .card{padding-left:45px;height: 640px;
+		   h3{padding-top: 87px;font-size: 24px;color: $heading;font-family: $medium;}
+		   h2{margin: 17px 0 24px 0;font-size: 35px;font-family: $medium;}
+		.donate-infr1{padding-bottom: 30px;line-height: 1.3;font-size: 20px;font-family: $regular;padding-right: 30px;}
+		 .donate-inf2{line-height: 1.3;font-size: 20px;margin-bottom: 50px;font-family: $regular;padding-right: 30px;}
+		   a{margin-top: 10x;text-decoration: none;color: white;background-color: $btncolor;display:flex;justify-content: center;width: 263px;height: 55px;font-size: 22px; padding-top: 10px;font-family: $medium;}
+	   }
+   }
+   // end-our-team-section
+   
+   
+   // start-location-section
+   .location{margin-top:120px;background-color: #EBE6DD;padding:0 71px 80px 71px;
+	   h3{padding-top: 76px;font-size: 26px;font-family: $medium;color: $heading;padding-bottom: 20px;}
+	   h2{font-size: 33px;font-family: $medium;margin-bottom: 30px;}
+	   .location-img{display: none;}
+	   .location-details{
+		   .location-heading{font-size: 30px;font-family: $medium;margin-top: 24px;margin-bottom: 20px;}
+		   .location-infr{font-size: 16px;font-family: $regular;margin-bottom: 30px;line-height: 1.3;word-spacing: 6px;margin-right: 0;}
+		   p{font-size: 12px;font-family: $medium;line-height: 1.3;}
+		   .digits{margin: 25px 0 25px 0;font-family: $medium;}
+	   }
+	   .map{padding-bottom: 35px;
+		   
+		   img{width: 562px;padding-bottom: 0;}
+	   }
+   }
+   // end-location-page
+   
+   
+//    // start-footer-section
+   .footer{margin:40px 0 0 0;
+	  .logo{display: flex;margin-bottom:20px;justify-content: center;
+		 img{width: 50px;height: 40px;margin-right: 34px;}
+   }
+   
+   .contact-details{display:flex;justify-content: center;align-self: center; flex-direction: column;align-items:center;margin-bottom: 40px;
+	   p{font-family:$Futura;font-size:15px;text-align:center;
+		   span{display: block;}
+	   }
+   
+   }
+   .contact-form{font-size: 24px;font-family: $medium;margin-bottom: 0;margin-left:0;display: flex;justify-content: center; align-items: center;flex-direction: column;
+     p{margin:auto;}
+}
+   .additional-infr{margin-bottom:20px;margin-left:0;display: flex;flex-direction: column;justify-content: center;align-self: center;align-items: center;
+	   .additional-infr-heading{font-size: 24px;font-family: $medium;margin-bottom: 20px;display: flex;justify-content: center;;margin-top: 70px;}
+		 .links{font-size: 18px;display:flex;justify-content:center;margin-bottom: 30px;
+		
+			
+	   }
+	   .send {text-decoration: none;color: white;background-color: $btncolor;height: 40px;width: 200px;font-size: 20px;font-family: $medium;border: none;position: absolute;bottom: 95%;}
+   }
+   
+   }
+   
+// end-footer-section
+
+
+// children's-church-page
+		
+		.children-church-banner{ height: 480px;width: 100%;
+	
+			.banner-inner{@include column();margin-left:71px;
+				p{margin-top: 253px; color: #FFFFFF;font-size: 26px;margin-bottom: 30px;}
+				h1{font-size: 90px;color: #FFFFFF;}
+			
+			}
+		
+			}
+
+			.about-children-church{margin: 100px 72px;margin-top:100px;
+				.iconi{left:40%;}
+				
+			img{height: 406px;}
+
+			.children-heading{margin-bottom: 6px;font-size: 21px;}
+			p{font-family: $regular;font-size: 19px;}
+			ol{font-size: 19px;margin: 15px 18px;font-family: $regular;}
+			}
+			// activities-for-children
+			.activities-for-children{margin-bottom: 137px;
+			}
+
+			// .church-activities-for-children
+			.church-activities-details{
+				text-align: center;
+				.detail1{margin:0 1% ;font-size: 19px;}
+				.detail2{margin:0 1%;font-size: 19px;text-align: center;}
+				.detail3{margin:0 1%;font-size: 19px;}
+				.detail4{margin:0 1%;font-size: 19px;}
+				
+			}
+			.gallery{margin-top: 149px;margin-bottom:6px;
+			
+			img{height: 468px;object-fit: cover;padding:0;}
+		}
+
+
+			// start-semons-section
+.sermons-banner{ background-image: linear-gradient(rgba(#010101,0.6), rgba(#010101,0.6)), url('img/sermonsHero.png');background-position: center;background-size: cover;height: 740px;width: 1440px;position: relative;z-index:1;margin-bottom:48px;
+
+		.banner-inner{@include column();margin-left:71px;
+				p{margin-top: 283px; color: #FFFFFF;font-size: 26px;margin-bottom: 30px;}
+					h1{font-size: 90px;color: #FFFFFF;}
+				
+				}
+			
+				}
+
+
+
+.our-latest-semons{margin: 104px 165px 153px 165px;
+		.sermon-heading{margin-bottom: 62px;font-family: $medium;font-size: 48px;}
+			.sermons-details{ display: flex;
+				flex-direction: column-reverse;
+					.sermons-img{
+						.fas{position: absolute;
+							top: 38%; left:25%;color: white;font-size: 80px;}
+						}
+					
+					
+			img{width: 400px;}
+		.sermons-inner{margin-left: 0;
+					
+				.sermon-heading2{font-family: $bold;font-size: 48px;margin-bottom: 20px;}
+				.sermon-infr{font-size: 18px;font-family: $regular;line-height: 1.3;margin-right: 10px;margin-bottom: 24px;}
+						 .date{font-size: 18px;font-family:$regular;margin-top:24px;
+							 span{color: $heading;font-family:$regular;font-size: 18px;}
+						 }
+						 
+						
+						.btn{display: flex;justify-content: c;}
+						
+						
+						}
+
+
+					
+				}
+			}
+
+
+
+				.latest-semons{margin-bottom: 116px;
+					h3{margin: 91px 0 30px 0;text-align: center;font-size: 24px;color: $heading;}
+					h2{margin-bottom: 72px;font-size: 48px;text-align: center;} 
+					img{margin-bottom: 38px;}
+					p{margin-bottom: 16px;font-size: 34px;
+			  
+				  }
+				  .date{font-size: 21px;color: $heading;}
+				  .sermon-details{font-size: 18px; font-family: $regular;margin-bottom: 74px;}
+				  .see-earlier{text-decoration: none;text-align: center;font-size: 16px;color:$heading;align-self:center;display:flex;justify-content:center;
+				
+				
+				}
+				.line{background-color: #1C0902;width:8%; height: 3px;margin-top: 15px;position: absolute;left: 41%;}
+			  }
+			  
+// end-latest-sermons
+
+
+
+//   church-funds
+			.church-funds{
+				.church-funds-inner{text-align: center;margin: 88px 72px 0 72px;
+				h3{font-size: 24px;color: $heading;margin-bottom: 36px;}
+				h2{font-size: 48px;margin-bottom: 39px;}
+				p{font-size: 22px;line-height: 30px;margin:39px 100px 51px 100px;}
+				img{width: 100%;}
+		}
+
+		 .raised-funds{margin: 72px 71px 39px 72px;background-color:#EBE6DD;padding: 109px 48px;
+
+			.line1{width:100%; height: 1px;background-color:#979797;padding:0 109px;margin-top: 5px;}
+			.line2{background-color: $black;width:80%; height: 3px;bottom:-125%;
+			
+			}
+			.milestone{display: flex;justify-content: flex-end;margin-right: 230px;color: $heading;
+
+			}
+			.raised-funds-details{display: flex;justify-content: space-between;
+			p{margin-top: 33px;font-size: 21px;font-family: $regular;color: #1C0902;}
+			}
+		
+		}
+	.funds-btn {text-decoration: none;color: #EBE6DD;font-size: 24;padding: 12px 20px;background-color: $blackdark;margin-left: 72px;}
+			}
+
+			.message{ 
+			h2{font-size: 48px;margin:116px 0 51px 0;text-align: center;}
+			p{font-size: 22px ;font-family:$regular;line-height: 32px;text-align: center; margin: 0 75px 51px 72px ;}
+			}
+
+// eventspage
+// events
+
+
+
+.event-banner{ background-position: center;background-size: cover;height: 500px;
+	
+	.events-banner-inner{@include column();margin-left:30px;
+		p{margin-top: 293px; color: #FFFFFF;font-size: 22px;margin-bottom: 20px;}
+		h1{font-size: 40px;color: #FFFFFF;}
+	
+	}
+
+	}
+
+	// comingup-events
+	.comingup-events{margin:auto;
+		// .events{}
+		h2{margin: 90px 0 0 10px;font-size: 30px;text-align: center;}
+		img{height: 400px;margin-bottom:10px;object-fit: cover;
+		
+		}
+		 .event-img{display: none;}
+		.event-inner1{margin-top:30px;text-align:center;margin-left:0;
+			h3{margin-bottom: 18px;font-family: $regular;font-size: 21px;}
+		
+		.event-infr{margin-right: 0;text-align: center;padding: 0 0;margin-bottom: 12%;font-size: 17px;}
+	
+		}
+
+		.events-inner2{@include flex();margin-bottom:30px;
+		img{width: 150px;height: 183px;margin-left: 4%;}
+		.event-details{margin-left:35px;
+		 h3{font-size: 16px;margin-bottom: 15px;}
+		 .day{font-size: 20px;margin-bottom: 10px;}
+		 .event-infr{ font-size: 16px;line-height: 1.3;margin-right: 0;}
+		 .time{margin-top: 10px;font-size: 14px;}
+		}
+		}
+	}
+	
+// children's-church-page
+		
+
+		.children-church-banner{ height: 500px;width: 100%;
+
+			.banner-inner{@include column();text-align:start;margin:auto;
+				p{margin-left:30px;font-size: 22px;margin-bottom: 18px;}
+				h1{font-size: 40px;margin-bottom: 18px;margin-left:30px;}
+				.banner-text{margin: 0 28px;text-align: center;
+					font-size: 20px;margin-bottom: 20px;line-height: 1.3;
+				}
+			}
+	
+		
+			}
+
+			.about-children-church{margin:100px 20px 0 20px;
+			img{height: 300px;width: 100%;object-fit: cover;margin-bottom: 40px;}
+
+			.children-heading{margin-top: 40px;font-size: 21px;font-family: $bold;}
+			p{font-size: 18px;line-height: 1.3;width: 100%;}
+			ol{font-size: 22px;margin: 15px 50px;font-family: $regular;line-height: 25px;}
+			}
+			// activities-for-children
+			.activities-for-children{margin:40px 10px 80px 10px;text-align: center;
+				img{margin-top: 40px;}
+			}
+
+			// .church-activities-for-children
+			.church-activities-details{margin-top: 0;
+				text-align: center;
+				.detail1{margin-bottom: 40px;}
+				.detail2{margin-bottom: 40px;}
+				.detail3{margin-bottom: 40px;}
+				.detail4{margin-bottom: 40px;}
+				p{margin: 0;line-height: 1.3;font-size: 20px;margin-bottom: 90px;}
+				
+			}
+			.gallery{text-align:center; align-self: center;margin:80px 10px 0 10px;
+			
+			img{height: 268px;width: 500px;margin-bottom: 30px;}
+		}
+
+
+
+// start-messy-page
+	.messy-banner{height: 500px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+	
+		.banner-inner{@include column();margin-left:30px;text-align:start;
+			p{margin-top: 283px; color: #FFFFFF;font-size: 22px;margin-bottom: 18px;}
+			h1{font-size: 40px;color: #FFFFFF;}
+		
+		}
+	
+		}
+
+		
+// about-messy-church
+		.about-messy-church{margin: 0 20px;
+			img{width: 100%;}
+			.heading{margin-top: 100px;font-family: $regular;font-size: 20px;margin: 48px 0 24px 0;}
+			h2{font-size: 43px;font-family: $regular;margin-bottom: 12px;}
+			p{font-size: 20px;font-family: $italic; line-height: 1.4;}
+
+			.about-messy-details{margin-top: 30px;
+				p{font-size: 20px;font-family: $regular;line-height: 1.4;margin: 22px 12px  0 12px;}
+			
+			}
+			
+		}
+
+		// start-testimonials
+		.testimonials{margin: 80px 30px 85px 30px;
+			.fas{left:41%;}
+		 img{height:306px;margin: auto;width: 100%;object-fit: cover;}
+		 .test-infr{margin-top: 80px;
+
+			h4{font-size: 24px;margin: 30px 0 12px 0;}
+			.test-details{font-family: $regular;font-size: 20px;line-height: 1.4;margin-bottom: 20px;}
+			.further-details{font-size: 20px;font-family: $medium;line-height: 1.4;}
+		 }
+		}
+
+
+	// start-semons-page
+
+				.sermons-banner{ height: 500px;width: 100%;
+
+					.banner-inner{@include column();text-align:start;margin:auto;
+						p{margin-left:30px;font-size: 22px;margin-bottom: 18px;}
+						h1{font-size: 40px;margin-bottom: 18px;margin-left:30px;}
+						.banner-text{margin: 0 28px;text-align: center;
+							font-size: 20px;margin-bottom: 20px;line-height: 1.3;
+						}
+					}
+			
+				
+					}
+
+
+			.our-latest-semons{margin:100px 0  60px 0;width:100%;
+			.sermon-heading{margin-bottom:15px;text-align:center;font-size: 20px;}
+			.sermon-heading2{font-size: 35px!important;margin-bottom: 20px;display: flex;place-content: center;}
+			.sermon-infr{text-align: center;margin: 0 4px;}
+			.s-img img{width: 100%;object-fit: contain;margin-top:50px;}
+			.sermon-details{font-size: 18px;margin-bottom: 24px; display: flex;flex-direction: column;
+			
+			.sermons-img{order: 2;
+			
+				
+			}
+		
+			
+			
+			}
+
+		
+			 .date{margin-top:24px;display:flex;place-content:center;
+				
+			 }
+		
+			.btn{text-align: center;width: 200px;margin: auto;display: flex;align-items: center;padding-left: 25px;justify-content: center;}
+		
+		
+			}
+
+
+
+			.latest-semons{margin-bottom: 25%!important;
+				.heading3{font-size: 30px;margin-bottom: 90px;}
+				img{margin-bottom: 38px;}
+				p{margin-bottom: 30px;font-size: 25px;
+		  
+			  }
+			  .date{font-size: 21px;margin-bottom: 30px;padding-top: 15px;}
+			  .sermon-details{font-size: 18px;margin-bottom: 50px;margin-top: 10%;}
+			.line{width: 80px;left: 40%;}
+			.see-earlier{margin-top:11px;}
+		  }
+		  .icon2 {left: 37%!important;top: 74%!important;font-size: 1px;}
+		  
+  // end-latest-sermons
+
+
+		
+// start-donations-page
+
+	//   church-funds
+			.church-funds{
+				.church-funds-inner{text-align: center;margin: 88px 15px 0 15px;
+				h3{font-size: 24px;color: $heading;margin-bottom: 36px;}
+				h2{font-size: 30px;margin-bottom: 30px;}
+				p{font-size: 20px;line-height: 1.3;margin:0 0 0 0;}
+				img{width: 100%;margin-top: 80px;margin-bottom: 80px;}
+		}
+
+		 .raised-funds{margin:0;background-color:#EBE6DD;padding: 100px 48px;margin-bottom:50px;
+
+			.line1{width:100%; height: 1px;background-color:#979797;padding:0 109px;margin-top: 5px;}
+			.line2{background-color: $black;width:80%; height: 3px;bottom:-125%;
+			
+			}
+			.milestone{display: flex;justify-content: flex-end;margin-right: 30px;
+
+			}
+			.raised-funds-details{display: flex;justify-content: space-between;
+			p{margin-top: 33px;font-size: 16px;}
+			}
+		
+		}
+	.funds-btn {display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		width: 200px;font-size: 20px;}
+			}
+
+			.message{ 
+			h2{font-size: 30px;margin-top: 70px;margin-bottom: 40px;}
+			p{font-size: 20px ;font-family:$regular;line-height: 1.3; margin: 50px  1% 90px 1% ;}
+			}
+
+			
+			
+
+
+// team-page
+	.the-team{margin: 0 38px;
+		h2{text-align: center;font-size: 32px;margin-bottom: 50px;}
+		.header{text-align: center;color: $heading;margin-top: 100px;font-size: 24px;margin-bottom: 23px;}
+		p{color: $black;}
+		// .team-inner{
+	 .t{img{width: 100%;}
+		h3{font-size: 27px;margin:15px 0 15px 0;}
+		.lead-pastor{color: $heading;font-size: 24px;font-size: $regular;}
+		.pastor-infr{font-size: 18px;color: $black;font-family: $regular;margin:15px 0 50px 0;line-height: 20px;}
+
+	}
+	
+}
+
+		
+// start-contact-page
+.about-church{margin-top: 80px;margin-bottom:50px;
+	.about-church-inner{display: flex;margin:auto;    display: flex;
+		margin: auto;
+		width: 100%;
+		flex-direction: column-reverse;
+		margin-bottom: 20px;
+	   img{margin-bottom: 30px;object-fit: cover;margin-left: 0;width: 100%;height: 175px;}
+	   .minister-details{margin-right:60%;margin-left:3%;margin-top:2%;margin-bottom:20px;
+	   .heading{font-size: 25px;margin-bottom: 21px;}
+	   p{display: block;font-size: 14px;
+		  span{display: block;margin-top: 10px;}
+	   }
+	   .number{font-size: 16px;font-family: $regular;margin-top: 6px;}
+   
+	   }
+   
+	   .church-details{margin-right: 60px;margin-left:3%;margin-top:2%;margin-bottom:20px;line-height:1.2;
+	   
+		   .heading{font-size: 25px;margin-bottom: 5px;
+		           em{display:inline;}
+		}
+		   .days{font-size: 14px; font-family: $regular;}
+		   .name{font-size: 20;margin: 5px 0;}
+		   p{font-size: 14px;
+			   span{display: none;font-size: 14px; font-family: $regular;}
+		   }
+	   }
+	}
+
+
+}
+// end-wardens-section
+
+.wards{margin-left: 38px;
+	h2{font-size:35px;margin-bottom: 40px;margin-left: -10px;text-align:center}
+	.wards-inner{  display: flex;flex-direction:column;place-content:center;justify-content:center;
+	.ward{display: flex;flex-direction: row;margin-bottom:26px;
+		p{margin-left:1px;font-size:20px;margin-top:37px;width: 100%;
+			span{display: block;margin-top:20px; font-size: 18px;}
+		}
+		img{width: 200px;object-fit: contain;}
+
+	}
+	}
+}
+
+// end-wardens-section 
+
+
+// start-request-section
+   .requests{display: flex;align-self:center;flex-direction:column;margin-left:0;margin-bottom:50px;
+	   h2{font-size: 35px; margin-bottom: 50px;margin-left:7%;}
+	   .req{display: flex;justify-content:space-between;flex-direction:row;
+
+	   
+		   .req-inner{margin-bottom:58px;display:flex;margin-left:7%;
+		   img{width: 200px;margin-right: 10px;}
+		.req-infr{ 
+		   .heading{font-size: 25px;margin-bottom: 27px;
+		   span{display: block;}
+		   }
+	   .number{font-size: 18px;margin-top:31px;display: block;font-family: $regular;}
+	   
+		   }
+		   }
+	   }
+   }
+
+
+
+
+
+
+		
+	
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+
+	.head{
+		
+
+		.nav-contact{position:fixed;background:$heading;top:0;padding:2%;color:$blackdark;
+		p{margin-right: 30px;z-index: 1;display: none;}
+		}
+	  
+		.menuopen{margin-left:35px;margin-top:9px;position:fixed;top:1%;
+				
+					}
+	.nav.active{width: 220px;}
+	.nav ul{ position: absolute; top: 30%; transform: translateY(-50%); width: 100%;
+		li {margin-top: 20px;padding-left:38px;
+	   a{color: black;text-decoration: none;font-size: 18px;font-family: $medium;}
+	   }
+		 }
+		 .call-us{font-size: 16px!important;position: relative;left: 60%;color: $blackdark;}
+		}
+
+		.menuopen{margin-left:6px;margin-top:6px;position:fixed;top:5%;
+			span{display: flex;width: 20px;height: 1px;background-color:white;margin-top: 3px;z-index: 999;
+			
+			}
+		
+				}
+
+
+
+	.banner{ background-position: center bottom;background-size: cover;height: 450px;width:100%;
+		
+	.banner-inner{@include column();align-items: center;
+		p{margin-top: 80px;font-size: 18px;margin-bottom: 15px;}
+		h1{font-size: 35px;margin-bottom: 20px;}
+		.banner-text{margin: 0 28px;text-align: center;
+			font-size: 18px;margin-bottom: 40px;
+		}
+	}
+	a{padding:15px 15px;text-decoration: none;color: $black;background-color: white;}
+	}
+	.icons{display: none;}
+	.icon{display: none;}
+
+
+	.about-all{padding-top: 84px;display: flex;justify-content:space-evenly;
+		 
+		.about-img{width: 200px;height: 200px;background-position:center;background-size:cover;
+		.overlay{ 
+			a{position:absolute;top: 40%;left: 55%;transform: translate(-50%, 50%);font-size: 18px;color: $white;font-family: $bold;z-index: 2;}
+			}
+		}
+	
+			.about-img2{width: 200px;height: 200px;background-position:center; background-size:cover;
+				.overlay{ 
+					a{position:absolute;top: 40%;left: 65%;transform: translate(-50%, 50%);font-size: 18px;color: $white;font-family: $bold;z-index: 2;width:100%;}
+					}
+				}
+			
+			.about-img3{width: 200px;height: 200px;background-position:center; background-size: cover;
+			.overlay{ 
+				a{position:absolute;top: 40%;left: 50%;transform: translate(-50%, 50%);font-size: 18px;color: $white;font-family: $bold;z-index: 2;}
+				}
+			}
+		}
+	
+
+
+	// start-about section
+.about-church{padding-top: 84px;display:flex;justify-content:space-evenly;
+	.about-img{position: relative;margin:0 8% 5% 8%;
+		img{width: 100%;padding-right: 0;object-fit: cover;}
+		.overlay{ 
+		p{position:absolute;top: 40%;left: 80%;transform: translate(-50%, 50%);font-size: 26px;color: $white;font-family: $bold;width: 100%;}
+		}
+
+	
+
+	}
+}
+
+
+.about-us{text-align: center;
+   h3{font-size: 24px;color: $heading;font-weight: $regular;margin-bottom: 20px;font-family: $regular;}
+   h2{font-size: 30px;margin-bottom: 25px;font-family: $regular;}
+   p{margin-bottom: 20px;font-size: 18px;font-family: $regular;text-align: center;}
+   .middle{font-family: $regular;margin: auto;margin-bottom: 20px;}
+}
+
+
+// meetings
+.meetings{
+	h2{margin: 60px 0 20px 0;text-align: center;font-size: 24px;color: $heading;}
+	.meeting{display: flex;justify-content:center;flex-direction:row;flex-wrap:wrap;
+
+   .meeting-ifr1{ display: flex;margin:0 20px;
+.card1{margin-right: 4px;width: 300px;}
+}
+
+	img{display: none;}
+	.card1{margin:  20px auto ;}
+	
+	.card2{margin:auto;width:394px;
+		.date{padding-top: 41px;font-size:20px;
+			span{display: block;padding-bottom: 13px;font-size:22px;}
+		}
+		p{font-size: 22px;line-height: 1.3;}
+			.text{margin-top: 21px;margin-bottom: 39px;font-size: 18px;line-height: 1.3;margin-right: 35px;margin-left: 35px;font-family: $regular;}
+	
+}
+	.sunset{width: 100%;margin-left:0;margin-top: 35px;display: none;}
+}
+}
+
+// our-work-vid-section
+
+
+.work-section{margin-top: 122px;
+
+	.ourwek{font-display: flex;flex-direction:column-reverse;
+
+	
+
+	.work-inner{height: 551px;display:flex;order:1;
+		.infr{width:100%;height: 0px;background-color: $pink;padding-left:45px;z-index: 1;
+			h3{padding-top: 65px;font-size: 26px;color: $heading;font-family: $regular;}
+			 h2{margin: 17px 0 10px 0;font-size: 30px;font-family: $medium;}
+	  .donate-inf1{padding-bottom: 18px;padding-right:14px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+	  .donate-inf2{padding-right:15px;line-height: 1.3;font-size: 20px;margin-bottom: 30px;font-family: $regular;}
+			.w-btn{border: none;color: white;background-color: $btncolor;font-size: 22px;display: flex;justify-content: center;align-items:center;width:305px;height: 55px;padding: 15px 0;text-decoration: none;
+			
+			}
+	  .items{
+		  img{width: 42px;height: 42px;margin-right: 21px;margin-bottom:49px; }
+	  }
+	
+	
+	}
+	
+	}
+	}
+}
+	
+	video:-webkit-full-screen + #video-controls {position: relative;bottom: 0;
+	}
+	
+	
+	input[type="range"] {-webkit-appearance: none !important;position:relative;top:40%;height: 2px;cursor: pointer;
+	}
+
+	input[type="range"]::-webkit-slider-thumb {-webkit-appearance: none !important;width: 10px;height: 10px;background-color: #fff;border-radius: 8px;
+	}
+	
+	
+#video__container {height: 400px;width:100%;overflow: hidden }
+		
+		#video__caption {position: absolute;color: #ccc;font-size: 1.25rem;text-align: center;margin: 0;padding: 0.5rem 0;z-index: 2147483647;
+		cursor: pointer;transition: all .8s ease-in-out;
+		}
+		
+#video__caption .fa-close {position: absolute;right: 20px;font-size:26px;
+		}
+#video__play__centerButton {display:flex;position:absolute;justify-content: center;align-items: center;cursor: pointer;opacity: .8;
+transition: all .8s ease-in-out;top: 10%;left:50%;color: white;border: 8px solid white;border-radius: 93px;padding: 30px 35px;
+		}
+		
+		
+
+
+
+// end our work
+
+// start-events
+.events{margin: 90px 0 90px 0;
+	
+	h3{font-size: 20px;margin-left: 20px;}
+	h2{font-size: 30px;margin-top: 20px;margin-left: 20px;}
+	.upcoming-events{margin:0 12%;
+	img{width:300px;object-fit: contain;}
+	.events-infr{
+		.event-day{font-size: 25px;}
+		.event-category{margin:0 0 11px 0;font-size: 20px;width: 100%;}
+		.event-details{font-size: 16px;margin-bottom: 15%;margin-right: 0;}
+	            }
+	.event-img-first{margin-bottom: 54px;}
+	.event-img-second{margin-bottom: 29px;}
+	
+
+	}
+	.see-more-btn{margin-left: 12%;}
+	
+	.sunday-time-table{display: flex;margin-left:30px;
+	p{
+		span{display: block;margin-top: 4px;}
+	}
+	}
+	.service-time{margin-bottom: 16px;margin-top: 40px;margin-left: 30px;}
+	.sunday-time-table{margin-bottom: 24px;
+		.fello-day{color: $heading;margin-right:25px;font-size:24px;
+		span{color: $black;}
+		}
+		p{font-size: 18px;}
+	}
+	.menfellowship{margin: auto;
+	.card{width:100%;height: 400px;margin:0 30px;
+	.heading-infr{font-size: 21px;}
+	
+	}
+	img{display:none;}
+	}
+
+
+}
+
+   // start-notices-section
+   .notices{background-color: #8DDED2;padding: 100px 71px 70px 71px;
+	h3{	color: $heading;font-size: 24px;}
+	h2{font-size: 35px;margin-top:29px;margin-bottom: 36px;}
+.acc{background-color:white;margin-bottom: 50px;padding:34px 30px 42px 28px; 
+	h4{cursor: pointer;position: relative;font-size:13px;
+	  &:after{content: "+";position: absolute;right: -20px;font-size: 35px;top:-90%;}
+	  }
+ .content{display: none;}
+	   p{margin-right:0;font-size: 18px;margin-top: 29px;line-height: 1.2;}
+ 
+}
+ img{display: none;}
+}
+
+.acc.active h4{
+ &:after{content:"";height: 2px;width:20px;top:50%;position: absolute;font-size: 30px;}
+} 
+
+
+// start-latest-sermons
+.latest-semons{margin-bottom: 75px!important;text-align:center;
+	.fas{position: absolute;top:14%;padding:12px;border-radius: 50%;left: 50%;color: white;font-size: 30px;}
+	  h3{margin: 91px 0 30px 0;text-align: center;font-size: 20px;color: $heading;}
+	  h2{font-size: 30px;margin-bottom: 20px; }
+	  a{font-size: 16px;margin-left: 0;}
+	
+.latest-s-header{font-size:16px;}
+	
+	.date{font-size: 16px;color: $heading;}
+}
+
+
+// start-sermons
+.donations{margin-top: 0;margin-bottom:60px;
+	img{display:none;}
+	.donation-inner{width:100%;height: 500px;padding-left:45px;
+		h3{padding-top: 87px;font-size: 24px;color: $heading;}
+		h2{margin: 17px 0 24px 0;font-size: 35px;font-weight: $medium;}
+		.donate-infr1{padding-bottom: 30px;padding-right:40px;line-height: 1.3;font-size: 20px;}
+		.donate-inf2{padding-right:40px;line-height: 1.3;font-size: 20px;margin-bottom: 44px;}
+		.btn{width: 50%;}
+	}
+}
+
+
+
+// payments
+
+.payments{display:flex ;flex-direction:row;justify-content:space-evenly;
+	img{width:200px;height:224px;margin-right: 30px;}
+	
+	.payments-inner{width: 100%;margin-top:60px;margin-bottom: 50px;
+	.snap-details{margin-right: 0;margin-bottom:29px;
+		p{line-height: 16px;font-size: 12px;font-family: $futurabold;}
+		.snap-header{margin-bottom: 12px;font-family: $bold}
+		span{display: block;}
+		.middle{margin-bottom: 12px;}
+	
+	}
+	
+	}
+	.banking-infr{
+		span{display: block;line-height: 16px;}
+	}
+	.banking-information{ padding-left: 0;margin: 0 10%;
+	
+
+	.bank-details {@include spacebtwn();
+	.bank-type{
+		p{font-family: $futurabold;line-height: 17px;font-size: 12px;}
+	}
+	.reference{	
+		p{font-family: $futurabold;line-height: 17px;font-size: 12px;
+		span{display: block;}
+		}
+	
+	}
+	.number{
+			p{font-family: $futurabold;line-height: 17px;font-size: 12px;}
+		}
+	}
+	.PBO-number{margin-bottom: 60px;font-family: $futurabold;font-size: 12.5px;}
+	
+	}
+	
+	}
+	// end-payments
+	
+	// line
+	 .line{width:90%; height: 1px;background-color:#979797;display: flex;justify-content: center;margin:auto;}
+
+
+
+
+// our-team
+.our-team{display: flex;justify-content:center;margin-top:60px;margin-bottom:30px;
+	img{display: none;}
+	.card{width:100%;height: 500px;background-color: $pink;padding-left:45px;
+		h3{padding-top: 87px;font-size: 24px;color: $heading;}font-weight: $medium;
+		h2{margin: 17px 0 24px 0;font-size: 35px;font-weight: $medium;}
+		a{margin-top: 36x;text-decoration: none;color: white;background-color: $btncolor;width: 50%;}
+		.donate-infr1{padding-bottom: 30px;padding-right:40px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+		.donate-inf2{padding-right:40px;line-height: 1.3;font-size: 20px;margin-bottom: 44px;font-family: $regular;}
+	}
+}
+// end-our-team
+
+// start-location
+.location{margin-top:0;background-color: #EBE6DD;padding:0  71px 30px 71px;
+
+	h2{font-size: 33px;}
+	img{display: inline;}
+	.location-details{
+		.location-heading{font-size: 30px;font-family: $medium;margin: 24px 0;}
+		.location-infr{font-size: 16px;font-family: $regular;margin-bottom: 17px;margin-right: 0;line-height: 1.3;}
+		p{font-size: 12px;margin-bottom: 19px;font-family: $medium;}
+	}
+	.map{display: flex;justify-content: center;padding-bottom: 0;
+	img{width:100%;}
+	}
+}
+
+
+
+
+// start-footer-section
+.footer{margin:40px 0 60px 0;
+	.logo{margin-left: -60px;
+		
+	img{ width:30px;height:35px;margin-right:10px}
+	p{font-size: 15px;}
+	}
+ 
+ .contact-details{margin-left: -60px;
+	 p{margin-bottom: 23px;font-family:$Futura;font-size:15px;
+		 span{display: block;}
+	 }
+ 
+ }
+
+.contact-form{margin-left: 6%;width:100%;
+	p{font-size: 15px;margin-left: 0;}
+	input[type="text"]{font-size: 15px;color: #F0F0F0;width: 100%;height:35px;border: 1px solid #F0F0F0;margin-top:25px;margin-bottom: 20px;padding-left: 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+     input[type="email"]{font-size: 15px;color: #F0F0F0;width: 100%;height: 35px;border: 1px solid #F0F0F0;margin-bottom: 20px;padding-left: 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+    textarea{width: 100%;height: 50px;border: 1px solid #F0F0F0;margin-bottom: 20px;color: #F0F0F0;font-size: 15px;padding: 15px 0 0 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+     .send{height: 35px;font-size: 15px;width: 150px;}
+}
+ .additional-infr{display: flex;flex-direction:column;width:100%;
+	 .additional-infr-heading{font-size: 20px;margin-top:0;}
+	   .links{margin-left:0;margin-right:20px;margin-top:0;
+		  a{font-size: 15px;}
+	 }
+ 
+	 
+	 .send {width: 200px;font-size: 20px;height: 40px;margin-top:6px;position: relative;left:10%;}
+ }
+ 
+ }
+ 
+ // end-footer-section
+
+
+//  children'page
+
+		.children-church-banner{ height:410px ;width:100%;
+	
+			.banner-inner{@include column();margin-left:71px;
+				p{margin-top: 220px; font-size: 22px;margin-bottom: 18px;}
+				h1{font-size: 50px;}
+			
+			}
+		
+			}
+
+			.about-children-church{margin: 40px 72px;margin-top:100px;
+			.iconi{top:50%;left: 30%;transform: translate(50%, -50%);}
+			img{height:300px;}
+
+			.children-heading{margin-bottom: 18px;font-size: 21px;margin-top: 40px;}
+			p{font-size: 19px;line-height: 28px;}
+			ol{font-size: 19px;margin: 15px 18px;line-height: 25px;}
+			}
+// activities-for-children
+			.activities-for-children{display: flex;flex-direction: row;margin-left:25px;margin-right: 25px;margin-bottom: 70px;
+			}
+// .church-activities-for-children-details
+			.church-activities-details{
+			
+				
+				p{font-size: 19px;line-height: 1.3;}
+				
+			}
+			.gallery{margin:70px 25px;
+			
+			img{height: 190px;padding:0;}
+		}
+
+
+
+			// start-messy-page
+	.messy-banner{height: 415px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+	
+		.banner-inner{@include column();margin-left:71px;
+			p{margin-top: 240px;font-size: 22px;margin-bottom: 18px;}
+			h1{font-size: 40px;}
+		
+		}
+	
+		}
+
+
+		// about-messy-church
+		.about-messy-church{margin: 0 20px;
+			img{width: 100%;object-fit: contain;}
+			.heading{margin-top: 100px;font-size: 22px;margin: 90px 0 24px 0;}
+			h2{font-size: 30px;margin-bottom: 12px;}
+			p{font-size: 20px;}
+
+			.about-messy-details{margin-top: 30px;
+				p{font-size: 20px;line-height: 1.3;margin: 22px 12px  0 12px;}
+			}
+			
+		}
+
+		// start-testimonials
+		.testimonials{margin: 80px 0 0 0;
+			.fas{display:block;}
+		
+		 img{object-fit: contain;margin-bottom: 50px;width: 100%;}
+		 .test-infr{margin: 0 30px;
+
+			h4{font-size: 24px;margin: 30px 0 12px 0;}
+			.test-details{font-size: 20px;line-height: 1.4;margin-bottom: 20px;
+			
+			
+			}
+			.further-details{font-size: 20px;font-family: $medium;}
+		 }
+		}
+
+
+	
+// end-testimonials
+
+
+// eventspage
+//start events
+.event-banner{ height: 500px;width: 100%;
+	
+	.events-banner-inner{@include column();
+		p{margin-top: 283px; font-size: 22px;margin-bottom: 20px;}
+		h1{font-size: 40px;}
+	
+	}
+
+	}
+
+	// comingup-events
+	.comingup-events{margin-top:80px ;margin-bottom:0;
+		h2{margin: 10px 0 20px 0;font-size: 25px;}
+		img{object-fit: cover;height: 340px;
+		
+		}
+		.event-img{width:100%;}
+		.event-inner1{margin-top: 21%;margin-bottom:50px;margin-left:40px;
+			h3{margin-bottom: 15px;font-size: 18px;}
+			.event-heading{font-size:18px;}
+		
+		.event-infr{margin-right:-10px;padding: 0 0 0 0;font-size: 16px;margin-top: 20px;}
+		.event-date{font-size: 14px;}
+		.event-time{font-size: 14px;}
+		.direction{font-size:14px;}
+		
+		
+	
+		}
+
+		.events-inner2{@include flex();margin:0;
+		img{width: 255px;height: 183px;margin-bottom: 30px;}
+		.event-details{margin-left:35px;
+		 h3{font-size: 21px;margin-bottom: 15px;}
+		 .day{font-size: 21px;margin-bottom: 10px;}
+		 .event-infr{ font-size: 17px;line-height: 1.3;margin-right: -15px;}
+		 .time{margin-top: 10px;font-size: 21px;}
+		}
+		}
+	}
+// end-events
+
+// start-semons-page
+		
+
+		.sermons-banner{height: 415px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+	
+			.banner-inner{@include column();margin-left:71px;
+				p{margin-top: 240px; color: #FFFFFF;font-size: 22px;margin-bottom: 18px;}
+				h1{font-size: 43px;color: #FFFFFF;}
+			
+			}
+		
+			}
+
+
+			.our-latest-semons{margin: 104px 165px 100px 165px;
+				.sermon-heading{font-size: 30px;text-align:center;}
+				.sermons-details{ display:flex;flex-direction:row;justify-content: center;
+					.sermons-img{
+						.fas{position: absolute;top: 40%; left:11%;color: white;font-size: 80px;}
+					}
+				
+				
+				img{width: 300px;height: 380px;object-fit: cover;}
+				.sermons-inner{margin-left: 40px;
+				
+					.sermon-heading2{font-size: 30px;}
+					.sermon-infr{font-size: 16px;margin-right: 0;margin-bottom: 24px;margin-top: 15px;}
+					 .date{font-size: 16px;margin-top:15px;
+						 span{font-size: 18px;}
+					 }
+					 
+					
+					.btn{font-size: 18px;color:rgb(193, 193, 193);padding:11px 27px 11px 17px;margin-top: 20px;
+					
+					
+					}
+					
+					
+					}
+
+
+				
+			}
+		}
+
+
+			.latest-semons{margin: 0 -15px 0 0;
+				.s-img {width:100%;}
+				h3{margin: 91px 0 30px 0;text-align: center;font-size: 24px;}
+				.heading3{margin-bottom: 30px;font-size: 19px;} 
+				
+				p{margin-bottom: 16px;font-size: 15px;}
+			  .date{font-size: 17px;margin-bottom: 14px;}
+
+			.line{background-color: #1C0902;width:10%; height: 3px;margin-top: 15px;position: absolute;left: 46%;margin-bottom: 52px;}
+		  }
+		  
+  // end-latest-sermons
+
+
+	// team-page
+	.the-team{margin: 0 38px;
+		h2{text-align: center;font-size: 30px;margin-bottom: 50px;}
+		.header{text-align: center;margin-top: 100px;font-size: 24px;margin-bottom: 23px;}
+		
+
+	 .t{
+		 img{width: 300px;object-fit: cover;}
+		h3{font-size: 25px;margin:15px 0 15px 0;}
+		.lead-pastor{font-size: 20px;}
+		.pastor-infr{font-size: 13px;margin:15px 0 50px 0;line-height: 1.3;}
+
+	}
+	
+}
+
+
+// start-donations-page
+
+//   church-funds
+			.church-funds{
+				.church-funds-inner{text-align: center;margin: 88px 15px 0 15px;
+				h3{font-size: 24px;margin-bottom: 36px;}
+				h2{font-size: 30px;margin-bottom: 30px;}
+				p{font-size: 20px;line-height: 1.3;margin:0 ;}
+				img{width: 100%;margin-top: 80px;margin-bottom: 80px;}
+		}
+
+		 .raised-funds{margin:0;background-color:#EBE6DD;padding: 100px 48px;margin-bottom:50px;
+
+			.line1{width:100%; height: 1px;background-color:#979797;padding:0 109px;margin-top: 5px;}
+			.line2{width:80%; height: 3px;bottom:-125%;
+				
+			}
+			.milestone{display: flex;justify-content: flex-end;margin-right: 30px;
+
+			}
+			.raised-funds-details{display: flex;justify-content: space-between;
+			p{margin-top: 33px;font-size: 16px;}
+			}
+		
+		}
+		
+	.funds-btn {display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		width: 200px;font-size: 20px;}
+			 
+			}
+
+			.message{ 
+			h2{font-size: 30px;margin-top: 90px;margin-bottom: 30px;}
+			p{font-size: 20px ;line-height: 1.3;margin: 30px 1% 90px 1% ;}
+			}
+
+
+
+// start-contact-page
+
+.about-church{margin-top: 20px;margin-bottom:93px;display:flex;justify-content:center;margin-left:15px;
+	.about-church-inner{display: flex;
+	
+	   
+	   img{width: 130px;height: 154px;object-fit: cover;}
+	   .minister-details{margin-left: 10px;margin-right:9px;
+	   .heading{font-size: 25px;margin-bottom: 21px;}
+	   p{display: block;font-size: 15px;
+		  span{display: block;}
+	   }
+	   .number{font-size: 18px;margin-top: 12px;}
+   
+	   }
+   
+	   .church-details{margin-left: 10px;margin-right:auto;
+	   
+		   .heading{font-size: 25px;margin-bottom: 9px;}
+		   .days{font-size: 13px;}
+		   .name{font-size: 22;margin: 17px 0;}
+		   p{font-size:15px;line-height:1.0;
+			   span{display: none;}
+		   }
+	   }
+	}
+
+
+}
+
+   
+  
+
+// end-wardens-section
+
+.wards{margin: 0 0 66px 0px;
+   h2{font-size:30px;margin-bottom: 66px;margin-left: 10px;}
+   .wards-inner{  display: flex;justify-content:space-evenly;flex-direction:row;
+   .ward{display: flex;flex-direction: row;
+	   p{font-size:18px;margin-top:10px;width: 100%;margin-right:0;margin-left:15px;
+		   span{display: block;margin-top:20px; font-size: 10px;}
+		   em{display: block;}
+	   }
+	   img{width:80px;height: 80px;object-fit: contain;margin-right:0;}
+
+   }
+   }
+}
+
+
+// start-request-section
+   .requests{display: flex;align-self:center;flex-direction:column;margin-left:0;
+	   h2{font-size: 35px; margin-bottom: 40px;margin-left: 10px;}
+	   .req{display: flex;justify-content:center;flex-direction:row;margin:0 8px;
+
+	   
+		   .req-inner{margin-bottom:58px;display:flex;
+		   img{width:150px;margin-right: 40px;}
+		.req-infr{ 
+		   .heading{font-size: 20px;margin-bottom: 20px;
+		   span{display: block;}
+		   }
+	   .number{font-size: 16px;margin-top:10px;display: block;}
+	   
+		   }
+		   }
+	   }
+   }
+   
+
+
+   // end-contact-page
+
+
+
+
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {  
+// home-tablet
+
+.head{
+
+	.nav-contact{
+		
+	        p{color:white;z-index: 8;display: flex;font-size: 18px;margin-right: 72px;line-height: 1.9;}
+	
+
+	}
+  
+	.menuopen{margin-left:35px;margin-top:6px;
+			
+				}
+.nav.active{width: 380px;height: 100vh;}
+.nav ul{ position: absolute; top: 45%; transform: translateY(-50%); width: 100%;
+	li {margin-top: 3rem;padding-left:38px;
+   a{color: black;text-decoration: none;font-size: 25px;font-family: $medium;}
+   }
+	 }
+		
+						}
+
+
+						
+
+.banner{height: 650px;
+	
+	.banner-inner{
+		p{margin-top: 254px;font-size: 26px;margin-bottom: 13px;}
+		h1{font-size: 60px;}
+		.banner-text{margin:0 30px;
+			font-size: 24px;
+			
+		}
+	}
+	a{padding:23px 28px;text-decoration: none;color: $black;background-color: white;margin-top:30px;}
+	}
+	
+	
+	// // start-about section
+	
+	.about-all{padding-top: 84px;display: flex;justify-content:space-evenly;
+		
+		.about-img{width: 200px;height: 200px;background-position:center;
+		.overlay{ 
+			a{top: 24%;right: 10%;transform: translate(-50%, 50%);width:100%;}
+			}
+		}
+	
+			.about-img2{width: 200px;height: 200px;background-position:center;
+				.overlay{ 
+					a{position:absolute;top: 25%;left: 50%;transform: translate(-50%, 50%);font-size: 26px;color: $white;font-family: $bold;z-index: 2;}
+					}
+				}
+			
+			.about-img3{width: 200px;height: 200px;background-position:center;
+			.overlay{ 
+				a{position:absolute;top: 35%;left: 50%;transform: translate(-50%, 50%);font-size: 26px;color: $white;font-family: $bold;z-index: 2;}
+				}
+			}
+		}
+	.about-us{text-align: center;margin-top: 66px;
+	   h3{font-size: 24px;margin-bottom: 20px;}
+	   h2{font-size: 48px;margin-bottom: 25px;}
+	   p{margin:0 20px 15px 20px ;font-size: 22px;line-height: 1.5;}
+	   .middle{margin-left:0;margin-right: 0;font-family: $regular;}
+	}
+
+
+// meetings
+.meetings{margin: auto ;
+	h2{text-align: center;font-size: 24px;}
+	.meeting{display: flex;justify-content:space-around;align-self:center;
+
+
+
+	.meeting-img{display: none;}
+	
+	.card1{width: 327px;height: 330px;background-color: $cold2;margin-left: 0;outline-offset: -8px;border-radius: 4px;margin-bottom: 18px;text-align: center;outline: 1px solid #FFFFFF;outline-offset: -6px;
+	.date{padding-top: 19px;font-size:22px;
+	span{display: block;padding-bottom: 13px;font-size:22px;}
+	}
+	p{font-size:22px;line-height: 1.3;}
+	.text{margin-top: 13px;margin-bottom: 18px;font-size: 18px;line-height: 1.3;margin-right: 30px;margin-left: 30px;font-family: $regular;}
+	}
+
+}
+}
+
+
+
+
+
+.work-section{margin-top: 122px;
+
+	.ourwek{
+
+	
+
+	.work-inner{height: 702px;padding-left: 30px;
+		.infr{width:100%;height: 0px;padding-left:10px;z-index: 1;
+			h3{padding-top: 30px;font-size: 24px;}
+			 h2{margin: 17px 0 10px 0;font-size: 30px;}
+	  .donate-inf1{padding-bottom: 15px;padding-right:20px;line-height: 1.3;font-size: 20px;}
+	  .donate-inf2{padding-right:20px;line-height: 1.3;font-size: 20px;margin-bottom: 15px;}
+			.w-btn{border: none;color: white;font-size: 16px;display: flex;justify-content: center;align-items:center;width:205px;height: 30px;padding:0;text-decoration: none;
+			
+			}
+	  .items{
+		  img{width: 30px;height: 30px;margin-right: 21px;margin-bottom:49px; }
+	  }
+	
+	
+	}
+	
+	}
+	}
+}
+	
+	video:-webkit-full-screen + #video-controls {position: relative;bottom: 0;
+	}
+	
+	
+	input[type="range"] {-webkit-appearance: none !important;position:relative;top:40%;height: 2px;
+	cursor: pointer;
+	}
+	
+	input[type="range"]::-webkit-slider-thumb {-webkit-appearance: none !important;width: 10px;height: 10px;background-color: #fff;border-radius: 8px;
+	}
+	
+	
+		
+ #video__container {width:150%;  }
+		
+	#video__caption {position: absolute;color: #ccc;font-size: 1.25rem;text-align: center;margin: 0;	padding: 0.5rem 0;z-index: 2147483647;
+		cursor: pointer;transition: all .8s ease-in-out;
+		}
+		
+#video__caption .fa-close {position: absolute;right: 20px;font-size:26px;}
+		
+#video__play__centerButton {display:flex;position:absolute;justify-content: center;align-items: center;cursor: pointer;opacity: .8;
+		transition: all .8s ease-in-out;top: 26%;left:50%;color: white;border: 8px solid white;border-radius: 93px;padding: 30px 35px;
+		}
+		
+
+
+// .work-section{margin-top: 122px;
+
+	
+
+
+
+// events
+.events{margin: 130px 76px 139px 76px;
+	
+	
+	.see-more-btn {font-size: 21px;color: $black;text-decoration: none;font-family: $regular;}
+	
+	
+	.service-time{margin-top: 55px;margin-left: 0;}
+	.sunday-time-table{margin-left:0;}
+	.menfellowship{margin-left:0;}
+
+
+
+}
+
+
+// start-notices-section
+.notices{background-color: #8DDED2;padding: 100px 71px 114px 71px;
+	h3{	color: $heading;font-size: 24px;font-family: $medium;}
+	h2{font-size: 48px;margin-top:29px;margin-bottom: 36px;font-family: $medium;}
+.acc{background-color:white;margin-bottom: 50px;padding:34px 30px 42px 28px; 
+	h4{margin:0;cursor: pointer;position: relative;font-size:16px;font-family:$medium;
+	  &:after{content: "+";position: absolute;right: 20px;font-size: 50px;font-family: $light;top:-90%;}
+	  }
+ .content{display: none;}
+	   p{margin-right: 86px;font-size: 18px;font-family: $regular;margin-top: 29px;line-height: 1.3;}
+ 
+}
+ img{width:300px;height: 478px;margin-top: 100px;object-fit: contain;}
+}
+
+.acc.active h4{
+ &:after{content:"";background-color: $black;height: 2px;width:42px;top:70%;position: absolute;}
+} 
+// end-events-section
+
+
+
+
+
+// start-latest-sermons
+
+.latest-semons{margin-bottom: 116px;
+	.fas{position: absolute;top:9%;padding:12px;border-radius: 50%;left: 50%;color: white;}
+	
+	  h2{margin-bottom: 72px;font-size: 35px;text-align: center;} 
+	  img{margin-bottom: 38px;}
+	  .latest-s-header{margin-bottom: 16px;font-size: 26px;}
+	
+
+}
+
+// end-latest-sermons
+
+// start-sermons
+.donations{display: flex;justify-content:center;margin-bottom:125px;
+	img{width: 100%;height: 700px;object-fit: cover;}
+	.donation-inner{width:100%;height: 700px;background-color: $pink;padding-left:45px;
+		h3{padding-top: 87px;font-size: 24px;color: $heading;font-family: $medium;}
+		h2{margin: 17px 0 24px 0;font-size: 30px;font-family: $medium;}
+		.donate-infr1{padding-bottom: 30px;padding-right:40px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+		.donate-inf2{padding-right:40px;line-height: 1.3;font-size: 20px;margin-bottom: 44px;font-family: $regular;}
+		.btn{text-decoration: none;color: white;background-color: $btncolor;font-family: $medium;width: 70%;}
+	}
+}
+
+
+
+
+// // payments
+
+
+
+.payments{margin: 100px 69px;
+	img{width:450px;height:350px;margin-right: 20px;object-fit: contain;}
+   
+	.payments-inner{@include flex();
+	.snap-details{margin-right:0;margin-bottom:15px;
+		p{line-height: 1.3;font-size: 20px;font-family: $futurabold;}
+		.snap-header{margin-bottom: 10px;font-family: $bold}
+	   span{display: block;font-size: 20px;font-family: $futurabold;}
+		.middle{margin-bottom: 25px;line-height: 1.3;}
+   
+	}
+   
+	}
+	.banking-infr{font-size: 20px;font-family: $Futura;margin-bottom:25px;
+   span{display: block;line-height: 1.3;}
+	}
+	.banking-information{ padding-left: 0;margin:80px 0 0 0;
+   
+   .banking-head{margin-bottom:15px;font-size: 20px;font-family: $bold;}
+   .bank-details {@include spacebtwn();margin-right:auto;
+   .bank-type{
+		p{font-family: $futurabold;line-height: 1.3;font-size: 20px;}
+	}
+	.reference{	
+	   p{font-family: $futurabold;line-height: 1.3;font-size: 20px;
+	   span{display: block;}
+	   }
+   
+	}
+	.number{
+		   p{font-family: $futurabold;line-height: 1.3;font-size: 20px;}
+		}
+   }
+	.PBO-number{margin-top: 50px;font-family: $futurabold;font-size: 20px;}
+   
+	}
+   
+	}
+   // // end-payments
+   
+   // // line
+	.line{width:90%; height: 1px;background-color:#979797;display: flex;justify-content: center;margin:65px;margin: auto;}
+   
+
+
+
+// our-team
+.our-team{display: flex;justify-content:center;margin-top:120px;
+	img{width: 100%;height: 700px;object-fit: cover;}
+	.card{width:100%;height: 700px;background-color: $pink;padding-left:45px;
+		h3{padding-top: 87px;font-size: 24px;color: $heading;font-family: $medium;}
+		h2{margin: 17px 0 24px 0;font-size: 35px;font-family: $medium;}
+		.donate-infr1{padding-bottom: 30px;padding-right:40px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+		.donate-inf2{padding-right:40px;line-height: 1.3;font-size: 20px;margin-bottom: 34px;font-family: $regular;}
+		// .btn{text-decoration: none;color: white;background-color: $btncolor;padding:15px 36px;font-weight: $medium;}
+		a{margin-top: 36x;text-decoration: none;color: white;background-color: $btncolor;width: 80%;}
+	}
+}
+// end-our-team
+
+// start-location
+.location{margin-top:70px;background-color: #EBE6DD;padding:0 71px;
+	h3{padding-top: 76px;font-size: 26px;font-family: $medium;color: $heading;padding-bottom: 12px;}
+	h2{font-size: 48px;font-family: $medium;margin-bottom: 0;}
+	img{padding-top: 93px;width: 600px;height: 428px;padding-bottom: 38px;}
+	.location-details{padding-bottom: 60px;
+		.location-heading{font-size: 36px;font-family: $medium;margin-bottom: 24px;}
+		.location-infr{font-size: 20px;font-family: $regular;margin-bottom: 17px;margin-right: 36%;line-height: 1.3;}
+		p{font-size: 20px;margin-bottom: 19px;font-family: $medium;}
+	}
+	.map{padding-bottom: 0;
+	img{display:none;}
+	}
+}
+
+// start-footer-section
+.footer{margin:60px 10px 0 10px;
+.logo{display: flex;margin-bottom:47px;
+img{width: 70px;height: 70px;margin-right: 34px;}
+p{font-size: 20px;font-family: $medium;}
+}
+
+.contact-details{
+	p{margin-bottom: 23px;font-family:$Futura;font-size:15px;
+		span{display: block;}
+	}
+
+}
+.contact-form{font-size: 20px;font-family: $medium;margin-bottom: 60px;
+input[type="text"]{font-size: 15px;color: #F0F0F0;width: 220px;height: 40px;border: 1px solid #F0F0F0;margin-top:25px;margin-bottom: 20px;padding-left: 15px;}
+input[type="email"]{font-size: 15px;color: #F0F0F0;width: 220px;height: 40px;border: 1px solid #F0F0F0;margin-bottom: 20px;padding-left: 15px;}
+textarea{width: 220px;height: 80px;border: 1px solid #F0F0F0;margin-bottom: 20px;color: #F0F0F0;font-size: 15px;padding: 15px 0 0 15px;}
+.send {text-decoration: none;color: white;background-color: $btncolor;height: 40px;width: 220px;font-size: 16px;font-family: $medium;border: none;text-align: center;}
+
+
+
+}
+
+.additional-infr{
+	.additional-infr-heading{font-size: 20px;font-family: $medium;margin-bottom: 20px;}
+	p{font-family: $medium;font-size: 15px;margin-bottom:18px;
+	span{display: block;margin-top: 10px;font-size: 16px;}
+	}
+.links{
+	a{font-size:18px;margin-bottom:18px;}
+}
+
+}
+
+
+}
+
+
+
+// children's-church-page
+		
+
+.children-church-banner{ height: 550px;width: 100%;
+
+	.banner-inner{@include column();text-align:start;margin:auto;
+		p{margin-left:30px;font-size: 22px;margin-bottom: 18px;line-height: 1.3;}
+		h1{font-size: 40px;margin-bottom: 18px;margin-left:30px;}
+		.banner-text{margin: 0 28px;text-align: center;
+			font-size: 20px;margin-bottom: 20px;line-height: 1.3;
+		}
+	}
+
+
+
+
+	}
+
+	.about-children-church{margin:130px 20px 0 20px;
+	img{height: 580px;width: 100%;object-fit: cover;margin-bottom: 40px;}
+
+	.children-heading{margin-top: 0;font-size: 21px;font-family: $bold;}
+	p{font-size: 18px;line-height: 1.2;width: 100%;}
+	ol{font-size: 22px;margin: 15px 50px;font-family: $regular;line-height: 1.2;}
+	}
+	// activities-for-children
+	.activities-for-children{margin:40px 30px 120px 30px;text-align: center;
+		img{margin-top:70px;}
+	}
+
+	// .church-activities-for-children
+	.church-activities-details{margin-top: 0;
+		text-align: center;
+		.detail1{margin-bottom: 40px;}
+		.detail2{margin-bottom: 40px;}
+		.detail3{margin-bottom: 40px;}
+		.detail4{margin-bottom: 40px;}
+		p{margin: 0;line-height: 1.3;font-size: 20px;margin-bottom: 20px;}
+		
+	}
+	.gallery{text-align:center; align-self: center;margin:100px  10px 0 10px;
+	
+	img{height:250px;width: 500px;margin-bottom: 30px;}
+}
+
+
+
+			// start-messy-page
+			.messy-banner{height: 550px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+	
+				.banner-inner{@include column();margin-left:71px;
+					p{margin-top: 283px; color: #FFFFFF;font-size: 22px;margin-bottom: 18px;}
+					h1{font-size: 43px;color: #FFFFFF;}
+				
+				}
+			
+				}
+		
+				// about-messy-church
+				.about-messy-church{margin: 0 20px;
+					img{width: 100%;object-fit: contain;}
+					.heading{margin-top: 100px;font-family: $regular;font-size: 22px;margin: 90px 0 24px 0;}
+					h2{font-size: 30px;font-family: $regular;margin-bottom: 12px;}
+					p{font-size: 22px;font-family: $italic;}
+		
+					.about-messy-details{margin-top: 30px;
+						p{font-size: 22px;font-family: $regular;line-height: 1.3;margin: 22px 12px  0 12px;}
+					}
+					
+				}
+		
+				// start-testimonials
+				.testimonials{margin: 80px 30px 0 ;
+				 img{text-align: center;object-fit: cover;width: 100%;height: 500px;}
+				 .test-infr{
+		
+					h4{font-size: 24px;margin: 0 0 12px 0;}
+					.test-details{font-family: $regular;font-size: 20px;line-height: 1.3;margin-bottom: 20px;}
+					.further-details{font-size: 20px;font-family: $medium;line-height:1.2}
+				 }
+				}
+				// end
+
+
+
+	
+		// eventspage
+// events
+.event-banner{ background-position: center;background-size: cover;height: 550px;width: 100%;position: relative;z-index:1;
+	
+	.events-banner-inner{@include column();
+		p{margin-top: 293px; color: #FFFFFF;font-size: 22px;margin-bottom: 20px;}
+		h1{font-size: 43px;color: #FFFFFF;}
+	
+	}
+
+	}
+
+	// comingup-events
+	.comingup-events{margin-top:100px ;
+		h2{margin: 10px 0 20px 10px;font-size: 30px;text-align: center;margin-bottom: 50px;}
+		img{object-fit: cover;
+		
+		}
+		.event-img{object-fit: cover;height: 380px;width: 100%;margin: auto;margin-bottom: 40%;}
+
+		.event-inner1{margin-top:30%;margin-left:48px;
+			h3{margin-bottom: 18px;font-family: $medium;font-size: 38px;}
+		.event-date{margin-top:18px;margin-bottom: 10px;font-family: $regular;font-size: 18px;}
+		.event-heading{font-size: 21px;font-family: $regular;}
+		.event-time{margin-bottom: 27px;font-size: 18px;font-family: $regular;}
+		.direction{font-size: 21px;font-family:$regular;
+			span{display: block;}
+		}
+		.event-infr{margin-top: 27px;font-size: 16px;font-family: $regular;margin-right: 0;line-height: 1.3;}
+	     
+		}
+
+		
+
+		.events-inner2{@include flex();
+		img{width: 150px;height: 203px;}
+		.event-details{margin-left:25px;
+		 h3{font-size: 18px;margin-bottom: 15px;}
+		 .day{font-size: 16px;margin-bottom: 10px;}
+		 .event-infr{ font-size: 16px;font-family: $regular;line-height: 1;margin-right: 0;}
+		 .time{margin-top: 10px;font-size: 14px;}
+		}
+		}
+	}
+
+
+
+
+
+		// start-semons-page
+		
+
+		.sermons-banner{height: 550px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+	
+			.banner-inner{@include column();margin-left:71px;
+				p{margin-top: 283px; color: #FFFFFF;font-size: 22px;margin-bottom: 18px;}
+				h1{font-size: 43px;color: #FFFFFF;}
+			
+			}
+		
+			}
+
+			.our-latest-semons{margin: 104px 165px 153px 165px;
+				.sermon-heading{margin-bottom: 62px;font-family: $medium;font-size: 40px;color: $black;}
+				.sermons-details{ display:flex;flex-direction:row;justify-content: center;margin:0 20%;
+					.sermons-img{
+						.fas{position: absolute;
+						top: 38%; left:-19%;font-size: 80px;}
+					}
+				
+				
+				img{width: 304px;height: 400px;object-fit: cover;}
+				.sermons-inner{margin-left: 30px;
+				
+					.sermon-heading2{font-family: $bold;font-size: 35px;text-decoration: none;color: $black;}
+					.sermon-infr{font-size: 18px;font-family: $regular;line-height: 1.3;margin-right: 0;margin-bottom: 24px;margin-top: 24px;}
+					 .date{font-size: 18px;font-family:$regular;margin-top:24px;text-decoration:none;color:black;
+						 span{color: $heading;font-family:$regular;font-size: 18px;}
+					 }
+					 
+					
+					.btn{background: black;font-size: 18px;color:rgb(193, 193, 193);padding:11px 27px 11px 17px;margin-top: 20px;font-family: $regular;
+					
+					
+					}
+					
+					
+					}
+
+
+				
+			}
+		}
+
+
+			.latest-semons{margin-bottom: 116px;
+				h3{margin: 91px 0 30px 0;text-align: center;font-size: 24px;color: $heading;}
+				.heading3{margin-bottom: 72px;font-size: 26px;} 
+				img{margin-bottom: 38px;}
+				p{margin-bottom: 16px;font-size: 36px;font-family: $medium;
+		  
+			  }
+			  .date{font-size: 21px;color: $heading;font-family: $medium;}
+			  .sermon-details{font-size: 18px;margin-top:8px;line-height: 1.3;}
+			  .see-earlier{text-decoration: none;text-align: center;font-size: 16px;color:$heading;align-self:center;display:flex;justify-content:center;font-family: $medium;margin-top: 23px;
+	
+			}
+			.line{background-color: #1C0902;width:12%; height: 3px;margin-top: 15px;position: absolute;left: 44%;margin-bottom: 52px;}
+		  }
+		  
+ // end-latest-sermon
+
+// start-contact-page
+.about-church{margin-top: 120px;margin-bottom:100px;display:flex;justify-content:center;margin-left:15px;
+	.about-church-inner{display: flex;
+	//    .pic{}
+	   
+	   img{width: 130px;height: 154px;object-fit: cover;}
+	   .minister-details{margin-left: 40px;margin-right:9px;
+	   .heading{font-size: 28px;margin-bottom: 21px;}
+	   p{display: block;font-size: 20px;
+		  span{display: block;}
+	   }
+	   .number{font-size: 18px;font-family: $regular;margin-top: 12px;}
+   
+	   }
+   
+	   .church-details{margin-left: 40px;margin-right:auto;
+	   
+		   .heading{font-size: 28px;margin-bottom: 9px;}
+		   .days{font-size: 13px; font-family: $regular;}
+		   .name{font-size: 22;margin: 17px 0;}
+		   p{font-size:20px;
+			   span{display: inline;font-size: 10px; font-family: $regular;display: none;}
+		   }
+	   }
+	}
+
+
+}
+
+ 
+
+// end-wardens-section
+
+.wards{margin: 0 0 100px 0px;
+   h2{font-size:30px;margin-bottom: 66px;margin-left: 10px;}
+   .wards-inner{  display: flex;justify-content:space-evenly;flex-direction:row;
+   .ward{display: flex;flex-direction: row;
+	   p{font-size:21px;margin-top:10px;width: 100%;margin-right:0;margin-left:15px;
+		   span{display: block;margin-top:20px; font-size: 16px; font-weight: $regular;}
+		   em{display: block;}
+	   }
+	   img{width:100px;height: 120px;object-fit: contain;margin-right:0;}
+
+   }
+   }
+}
+
+
+// start-request-section
+   .requests{display: flex;align-self:center;flex-direction:column;margin-left:1%;margin-right:0;
+	   h2{font-size: 35px; margin-bottom: 66px;}
+	   .req{display: flex;justify-content:center;flex-direction:row;margin:0 8px;
+
+	   
+		   .req-inner{margin-bottom:58px;display:flex;
+		   img{width:150px;margin-right: 40px;}
+		.req-infr{ 
+		   .heading{font-size: 20px;margin-bottom: 21px;
+		   span{display: block;}
+		   }
+	   .number{font-size: 16px;margin-top:10px;display: block;font-family: $regular;}
+	   
+		   }
+		   }
+	   }
+   }
+   
+   // end-request-section
+
+   // end-contact-page
+	
+
+
+
+
+
+
+
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+
+
+.head{
+
+	
+		.nav-contact{ display: flex;width:100%;justify-content:space-between;
+	        p{color:white;z-index: 8;display: flex;font-size: 18px;margin-right: 72px;line-height: 1.9;}
+	}
+	
+	
+  
+	.menuopen{margin-left:35px;margin-top:6px;
+			
+				}
+.nav.active{width: 400px;height: 100vh;}
+.nav ul{ position: absolute; top: 45%; transform: translateY(-50%); width: 100%;
+	li {margin-top: 3rem;padding-left:38px;
+   a{color: black;text-decoration: none;font-size: 25px;font-family: $medium;}
+   }
+	 }
+		
+						}
+
+.banner{height: 650px;
+	
+	.banner-inner{
+		p{margin-top: 254px;font-size: 26px;margin-bottom: 13px;}
+		h1{font-size: 60px;}
+		.banner-text{margin:0 30px;
+			font-size: 24px;
+			
+		}
+	}
+	a{padding:23px 28px;text-decoration: none;color: $black;background-color: white;margin-top:30px;}
+	}
+	
+	
+	// // start-about section
+	.about-all{
+	 
+		.about-img{width: 300px;height: 200px;background-position:center;
+		.overlay{ 
+			a{top: 40%;left: 65%;transform: translate(-50%, 50%);font-size: 20px;}
+			}
+		}
+	
+			.about-img2{width: 300px;height: 200px;background-position:center;
+				.overlay{ 
+					a{position:absolute;top: 40%;left: 66%;transform: translate(-50%, 50%);font-size: 20px;width:100%}
+					}
+				}
+			
+			.about-img3{width: 300px;height: 200px;background-position:center;
+			.overlay{ 
+				a{position:absolute;top: 40%;left: 48%;transform: translate(-50%, 50%);font-size: 20px;}
+				}
+			}
+		}
+	.about-us{text-align: center;margin-top: 66px;
+	   h3{font-size: 24px;margin-bottom: 20px;}
+	   h2{font-size: 48px;margin-bottom: 25px;}
+	   p{margin:0 20px 15px 20px ;font-size: 22px;line-height: 1.5;}
+	   .middle{margin-left:0;margin-right: 0;}
+	}
+
+
+
+	// start-meetings-section
+.meetings{
+	h2{margin: 84px 0 62px 0;text-align: center;font-size: 24px;}
+	.meeting{display: flex;justify-content:center;margin-right:0;
+
+
+
+	img{width: 350px;height: 678px;}
+	
+	.card1{width: 300px;height: 330px;margin-left: 22px;border-radius: 4px;margin-bottom: 18px;text-align: center;
+	.date{padding-top: 19px;font-size:20px;
+	span{display: block;padding-bottom: 13px;font-size:22px;}
+	}
+	p{font-size:22px;line-height: 1.2;font-family: $medium;}
+	.text{margin-top: 13px;margin-bottom: 16px;font-size: 18px;line-height: 1.3;margin-right: 10px;margin-left: 30px;}
+	}
+	.meeting-infr2{ 
+	.card2{height: 466px;width:310px;
+		.date{padding-top: 41px;font-size:20px;
+			span{display: block;padding-bottom: 10px;font-size:20px;}
+		}
+		p{font-size: 20px;line-height: 1.2;}
+			.text{margin-top: 16px;margin-bottom: 20px;font-size: 18px;line-height: 1.2;margin-right: 35px;margin-left: 20px;}
+	
+}
+	.sunset{width: 310px;height: 192px;margin-left: 22px;margin-top: 18px;background-position: center;}
+}
+}
+}
+// end-meetings-section
+
+
+
+
+
+.work-section{margin-top: 122px;
+
+	.ourwek{
+
+	
+
+	.work-inner{height: 701px;
+		.infr{width:100%;height: 0px;background-color: $pink;padding-left:20px;z-index: 1;
+			h3{padding-top: 50px;font-size: 26px;color: $heading;font-family: $regular;}
+			 h2{margin: 17px 0 10px 0;font-size: 30px;font-family: $medium;}
+	  .donate-inf1{padding-bottom: 18px;padding-right:14px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+	  .donate-inf2{padding-right:15px;line-height: 1.3;font-size: 20px;margin-bottom:20px;font-family: $regular;}
+			.w-btn{border: none;color: white;background-color: $btncolor;font-size: 20px;display: flex;justify-content: center;align-items:center;width:205px;height: 30px;padding:0;text-decoration: none;
+			
+			}
+	  .items{
+		  img{width: 30px;height: 30px;margin-right: 21px;margin-bottom:49px; }
+	  }
+	
+	
+	}
+	
+	}
+	}
+}
+
+
+
+.latest-semons{margin-bottom: 116px;
+	h2{margin-bottom: 20px!important;}
+	.fas{left: 50%!important;}
+	  .latest-h{margin-bottom: 72px;font-size: 48px;text-align: center;font-family: $medium;text-decoration: none;color: $black;} 
+	  img{margin-bottom: 38px;margin-top: 38px;}
+	   .latest-s-header {margin-bottom: 16px;font-size: 36px;font-family: $medium;text-decoration: none;color: $black;
+
+	}
+	.date{font-size: 21px;color: $heading;font-family: $medium;text-decoration: none;margin-top: 16px!important;display: block;}
+}
+
+	
+
+	
+
+
+// // events
+
+// start-events-section
+.events{margin: 122px 76px 139px 76px;
+	
+	h3{margin-bottom: 24px;font-size: 20px;color: $heading;font-family: $regular;}
+	 h2{margin-bottom: 30px;font-size: 48px;font-family: $regular;}
+   .upcoming-events{display: flex;justify-content:space-around;
+	a{
+		img{width: 150px;height: 200px;object-fit: cover;}
+	}
+		
+	.events-infr{margin-left: 35px;
+			.event-day{font-size: 30px;font-family: $regular;margin-bottom: 24px;}
+			.event-category{margin:0 0 11px 0;font-size: 21px;}
+			  .event-details{font-size: 16px;line-height: 1.3;font-family: $regular;margin-right: 25px;font-family: $regular;}
+			  .event-date{font-size: 18px;margin-top: 24px;}
+			}
+	  .event-img-first{margin-bottom: 54px;}
+	   .event-img-second{margin-bottom: 29px;}
+
+}
+.see-more-btn {font-size: 18px;color: $black;text-decoration: none;font-family: $regular;}
+
+.sunday-time-table{display: flex;
+		   p{font-size: $regular;
+			  span{display: block;margin-top: 4px;line-height: 1.3;}
+		   }
+}
+.service-time{margin-bottom: 16px;}
+		.sunday-time-table{margin-bottom: 24px;
+			 .fello-day{color: $heading;margin-right:25px;font-size:24px;
+				  span{color: $black;}
+	}
+	p{font-size: 18px;}
+}
+	 .menfellowship{display: flex;
+		 .card{background-color: $cold2;outline: 1px solid white;outline-offset: -11px;border-radius: 4px;width:691px;height: 560px;padding:18px;
+			.heading-infr{font-size: 21px;}
+				p{padding-top: 25px;line-height: 1.35;}
+}
+			 img{display: none;}
+}
+
+
+}
+
+// end-events-section
+
+
+// start-notices-section
+.notices{background-color: #8DDED2;padding: 100px 71px 114px 71px;
+	h3{	color: $heading;font-size: 24px;font-family: $medium;}
+	h2{font-size: 48px;margin-top:29px;margin-bottom: 36px;font-family: $medium;}
+.acc{background-color:white;margin-bottom: 50px;padding:34px 30px 42px 28px; 
+	h4{margin:0;cursor: pointer;position: relative;font-size:16px;font-family:$medium;
+	  &:after{content: "+";position: absolute;right: 20px;font-size: 50px;font-family: $light;top:-90%;}
+	  }
+ .content{display: none;}
+	   p{margin-right: 86px;font-size: 18px;font-family: $regular;margin-top: 29px;line-height: 1.3;}
+ 
+}
+ img{width:300px;height: 478px;margin-top: 100px;object-fit: contain;}
+}
+
+.acc.active h4{
+ &:after{content:"";background-color: $black;height: 2px;width:42px;top:70%;position: absolute;}
+} 
+// end-events-section
+
+
+
+
+
+// start-latest-sermons
+
+.latest-semons{margin-bottom: 116px;
+	.fas{position: absolute;top:18%;padding:12px;border-radius: 50%;left: 30%;color: white;}
+	
+	  h2{margin-bottom: 72px;font-size: 35px;text-align: center;} 
+	  img{margin-bottom: 38px;}
+	  p{margin-bottom: 16px;font-size: 26px;
+
+	}
+
+}
+
+// end-latest-sermons
+
+// start-sermons
+.donations{display: flex;justify-content:center;margin-bottom:125px;
+	img{width: 100%;height: 700px;object-fit: cover;}
+	.donation-inner{width:100%;height: 700px;background-color: $pink;padding-left:45px;
+		h3{padding-top: 87px;font-size: 24px;color: $heading;font-family: $medium;}
+		h2{margin: 17px 0 24px 0;font-size: 30px;font-family: $medium;}
+		.donate-infr1{padding-bottom: 30px;padding-right:40px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+		.donate-inf2{padding-right:40px;line-height: 1.3;font-size: 20px;margin-bottom: 44px;font-family: $regular;}
+		.btn{text-decoration: none;color: white;background-color: $btncolor;font-family: $medium;width: 70%;}
+	}
+}
+
+
+
+// our-team
+.our-team{display: flex;justify-content:center;margin-top:120px;
+	img{width: 100%;height: 700px;object-fit: cover;}
+	.card{width:100%;height: 700px;background-color: $pink;padding-left:45px;
+		h3{padding-top: 87px;font-size: 24px;color: $heading;font-family: $medium;}
+		h2{margin: 17px 0 24px 0;font-size: 35px;font-family: $medium;}
+		.donate-infr1{padding-bottom: 30px;padding-right:40px;line-height: 1.3;font-size: 20px;font-family: $regular;}
+		.donate-inf2{padding-right:40px;line-height: 1.3;font-size: 20px;margin-bottom: 34px;font-family: $regular;}
+		// .btn{text-decoration: none;color: white;background-color: $btncolor;padding:15px 36px;font-weight: $medium;}
+		a{margin-top: 36x;text-decoration: none;color: white;background-color: $btncolor;width: 80%;}
+	}
+}
+// end-our-team
+
+// start-location
+
+
+
+//start-location-section
+.location{margin-top:183px;background-color: #EBE6DD;padding:0 71px;
+	h3{padding-top: 76px;font-size: 26px;font-family: $medium;color: $heading;padding-bottom: 12px;}
+	h2{font-size: 48px;font-family: $medium;margin-bottom: 53px;}
+	.location-img{padding-top: 93px;width: 650px;margin-bottom: 39px;object-fit: cover;height:398px;}
+	.location-details{
+		.location-heading{font-size: 25px;font-family: $medium;margin-bottom: 10px;}
+		.location-infr{font-size: 12px;font-family: $regular;margin-bottom: 8px;line-height: 1.2;word-spacing: 6px;margin-right: 10%;}
+		p{font-size: 12px;font-family: $medium;line-height: 1.3;}
+		.digits{margin: 0 0 10px 0;font-family: $medium;}
+	}
+	.map{padding-bottom: 92px;
+		
+		img{width: 562px;object-fit: contain;}
+	}
+}
+// end-location-page
+
+
+
+
+// start-footer-section
+.footer{margin:94px 10px 30px 10px;
+.logo{display: flex;margin-bottom:47px;
+img{width: 70px;height: 70px;margin-right: 34px;}
+p{font-size: 20px;font-family: $medium;}
+}
+
+.contact-details{
+	p{margin-bottom: 23px;font-family:$Futura;font-size:15px;
+		span{display: block;}
+	}
+
+}
+.contact-form{font-size: 20px;font-family: $medium;margin-bottom: 23px;
+input[type="text"]{font-size: 15px;color: #F0F0F0;width: 230px;height: 35px;border: 1px solid #F0F0F0;margin-top:25px;margin-bottom: 20px;padding-left: 15px;}
+input[type="email"]{font-size: 15px;color: #F0F0F0;width: 230px;height: 35px;border: 1px solid #F0F0F0;margin-bottom: 20px;padding-left: 15px;}
+textarea{width: 230px;height: 80px;border: 1px solid #F0F0F0;margin-bottom: 20px;color: #F0F0F0;font-size: 15px;padding: 15px 0 0 15px;}
+.send {text-decoration: none;color: white;background-color: $btncolor;height: 40px;width: 230px;font-size: 20px;font-family: $medium;border: none;}
+
+
+}
+.additional-infr{
+	.additional-infr-heading{font-size: 20px;font-family: $medium;margin-bottom: 20px;}
+	p{font-family: $medium;font-size: 15px;margin-bottom:30px;
+	span{display: block;margin-top: 10px;font-size: 15px;}
+	}
+
+.links{
+	a{font-size: 16px;margin-bottom: 20px;}
+}
+}
+
+
+}
+
+
+
+// children's-church-page
+		
+
+.children-church-banner{ height: 550px;width: 100%;
+
+	.banner-inner{@include column();text-align:start;margin:auto;
+		p{margin-left:30px;font-size: 22px;margin-bottom: 18px;line-height: 1.3;}
+		h1{font-size: 40px;margin-bottom: 18px;margin-left:30px;}
+		.banner-text{margin: 0 28px;text-align: center;
+			font-size: 20px;margin-bottom: 20px;line-height: 1.3;
+		}
+	}
+
+
+
+
+	}
+
+	.about-children-church{margin:100px 20px 0 20px;
+	img{height: 400px;width: 100%;object-fit: cover;margin-bottom: 40px;}
+
+	.children-heading{margin-top: 0;font-size: 21px;font-family: $bold;}
+	p{font-size: 18px;line-height: 1.2;width: 100%;}
+	ol{font-size: 22px;margin: 15px 50px;font-family: $regular;line-height: 1.2;}
+	}
+	// activities-for-children
+	.activities-for-children{margin:0 25px 80px 25px;text-align: center;
+		img{margin-top: 100px;}
+	}
+
+	// .church-activities-for-children
+	.church-activities-details{margin-top: 0;
+		text-align: center;
+		.detail1{margin-bottom: 40px;}
+		.detail2{margin-bottom: 40px;}
+		.detail3{margin-bottom: 40px;}
+		.detail4{margin-bottom: 40px;}
+		p{margin: 0;line-height: 1.3;font-size: 20px;margin-bottom: 20px;}
+		
+	}
+	.gallery{text-align:center; align-self: center;margin:100px  25px 0 25px;
+	
+	img{height:250px;width: 500px;margin-bottom: 30px;}
+}
+
+
+
+
+// start-messy-page
+			.messy-banner{height: 550px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+	
+				.banner-inner{@include column();margin-left:71px;
+					p{margin-top: 283px; color: #FFFFFF;font-size: 22px;margin-bottom: 18px;}
+					h1{font-size: 43px;color: #FFFFFF;}
+				
+				}
+			
+				}
+		
+// about-messy-church
+.about-messy-church{margin: 0 20px;
+		img{width: 100%;object-fit: contain;}
+		.heading{margin-top: 100px;font-family: $regular;font-size: 22px;margin: 90px 0 24px 0;}
+			h2{font-size: 30px;font-family: $regular;margin-bottom: 12px;}
+			p{font-size: 22px;font-family: $italic;}
+		
+					.about-messy-details{margin-top: 30px;
+						p{font-size: 22px;font-family: $regular;line-height: 1.3;margin: 22px 12px  0 12px;}
+					}
+					
+				}
+		
+			
+.testimonials{margin: 80px 30px 80px 30px ;
+			img{text-align: center;object-fit: cover;width: 100%;height: 410px;}
+				.test-infr{
+		   
+					   h4{font-size: 24px;margin: 0 0 12px 0;}
+					   .test-details{font-family: $regular;font-size: 20px;line-height: 1.3;margin-bottom: 20px;}
+					   .further-details{font-size: 20px;font-family: $medium;line-height:1.2}
+					}
+				   }
+	.gallery{margin-top: 50px;
+					img{height: 300px;}
+				}
+				// end
+
+
+
+	
+// eventspage
+// events
+.event-banner{ background-position: center;background-size: cover;height: 550px;width: 100%;position: relative;z-index:1;
+	
+	.events-banner-inner{@include column();
+		p{margin-top: 293px; color: #FFFFFF;font-size: 22px;margin-bottom: 20px;}
+		h1{font-size: 43px;color: #FFFFFF;}
+	
+	}
+
+	}
+
+	// comingup-events
+	.comingup-events{margin-top:100px ;
+		h2{margin: 10px 0 20px -150px;font-size: 30px;text-align: center;margin-bottom: 50px;}
+		img{object-fit: cover;
+		
+		}
+		.event-img{object-fit: cover;height: 380px;width: 100%;margin: auto;}
+		.event-inner1{margin-top: 100px;margin-bottom:150px;
+			h3{margin-bottom: 20px;font-family: $regular;font-size: 21px;}
+		
+		.event-infr{margin-top: 30px;margin-right: 0;}
+		.day{font-size: 21px;}
+	
+		}
+
+		.events-inner2{@include flex();margin-bottom:0;
+		img{width: 150px;height: 183px;}
+		.event-details{margin-left:35px;
+		 h3{font-size: 18px; font-family: $regular;margin-bottom: 15px;}
+		 .day{font-size: 21px;margin-bottom: 10px;}
+		 .event-infr{ font-size: 17px;font-family: $regular;line-height: 1.3;margin-right: 0;}
+		 .time{margin-top: 10px;font-size: 21px; font-weight: $regular;}
+		}
+		}
+	}
+
+
+
+		// start-semons-page
+		
+
+		.sermons-banner{height: 550px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+	
+			.banner-inner{@include column();margin-left:71px;
+				p{margin-top: 283px; color: #FFFFFF;font-size: 22px;margin-bottom: 18px;}
+				h1{font-size: 43px;color: #FFFFFF;}
+			
+			}
+		
+			}
+
+	.our-latest-semons{
+				.sermons-details{
+					.sermons-img{.fas{position: absolute;top: 40%; left:18%;font-size: 80px;}
+
+					}
+				}
+			}
+			
+			
+
+		
+				
+			img{width: 304px;height: 400px;object-fit: cover;}
+			.sermons-inner{margin-left: 30px;
+			
+				.sermon-heading2{font-family: $bold;font-size: 35px;text-decoration: none;color: $black;}
+				.sermon-infr{font-size: 18px;font-family: $regular;line-height: 1.3;margin-right: 0;margin-bottom: 24px;margin-top: 24px;}
+				 .date{font-size: 18px;font-family:$regular;margin-top:24px;text-decoration:none;color:black;
+					 span{color: $heading;font-family:$regular;font-size: 18px;}
+				 }
+				 
+				
+				.btn{background: black;font-size: 18px;color:rgb(193, 193, 193);padding:11px 27px 11px 17px;margin-top: 20px;font-family: $regular;
+				
+				
+				}
+				
+				
+				}
+
+
+			
+		
+
+	
+		
+
+
+
+.latest-semons{margin-bottom: 116px;
+	h3{margin: 91px 0 30px 0;text-align: center;font-size: 24px;color: $heading;}
+	h2{margin-bottom: 72px;font-size: 48px;text-align: center;} 
+		img{margin-bottom: 38px;}
+			p{margin-bottom: 16px;font-size: 34px;
+	  
+		  }
+	 .date{font-size: 21px;color: $heading;}
+		 .sermon-details{font-size: 18px; font-family: $regular;margin-bottom: 40px;}
+		  .see-earlier{text-decoration: none;text-align: center;font-size: 16px;color:$heading;align-self:center;display:flex;justify-content:center;
+		
+	
+		}
+		.line{background-color: #1C0902;width:8%; height: 3px;margin-top: 15px;position: absolute;left: 39%;}
+	  }
+	  
+	  // end-latest-sermons
+
+
+
+
+
+.about-church{margin: 120px 15px 100px 0;display:flex;justify-content:center;
+	.about-church-inner{display: flex;
+	//    .pic{}
+	   
+	   img{width: 130px;height: 154px;object-fit: cover;}
+	   .minister-details{margin-left: 40px;margin-right:9px;
+	   .heading{font-size: 28px;margin-bottom: 21px;}
+	   p{display: block;font-size: 20px;
+		  span{display: block;}
+	   }
+	   .number{font-size: 18px;font-family: $regular;margin-top: 12px;}
+   
+	   }
+   
+	   .church-details{margin-left: 40px;margin-right:auto;
+	   
+		   .heading{font-size: 28px;margin-bottom: 9px;}
+		   .days{font-size: 13px; font-family: $regular;}
+		   .name{font-size: 22;margin: 17px 0;}
+		   p{font-size:20px;
+			   span{display: inline;font-size: 10px; font-family: $regular;display: none;}
+		   }
+	   }
+	}
+
+
+}
+
+   
+
+.wards{margin: 0 0 100px 0px;
+   h2{font-size:30px;margin-bottom: 66px;margin-left: 10px;}
+   .wards-inner{  display: flex;justify-content:space-evenly;flex-direction:row;
+   .ward{display: flex;flex-direction: row;
+	   p{font-size:21px;margin-top:10px;width: 100%;margin-right:0;margin-left:30px;
+		   span{display: block;margin-top:20px; font-size: 16px; font-weight: $regular;}
+		   em{display: inline;}
+	   }
+	   img{width:150px;height: 180px;object-fit: contain;margin-right:0;}
+
+   }
+   }
+}
+
+
+
+// start-request-section
+.requests{display: flex;align-self:center;flex-direction:column;margin-left:0;margin-right:0;margin-left: 0;
+	h2{font-size: 35px; margin-bottom: 66px;margin-left: 10px;}
+	.req{display: flex;justify-content:center;flex-direction:row;margin:0 8px;
+
+	
+		.req-inner{margin-bottom:58px;display:flex;
+		img{width:300px;margin-right: 40px;height: 200px;}
+	 .req-infr{ 
+		.heading{font-size: 20px;margin-bottom: 20px;
+		span{display: block;}
+		}
+	.number{font-size: 20px;margin-top:10px;display: block;font-family: $regular;}
+	
+		}
+		}
+	}
+}
+
+// end-request-section
+
+// end-contact-page
+
+// donations page
+ .payments{
+	 .payments-inner{
+		 img{object-fit: contain;}
+	 
+ 
+ .snap-details{
+	 .snap-header{margin-bottom: 18px;}
+	 .middle{margin-bottom: 18px;}
+ }
+	
+
+}
+}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (width: 1366px) {
+	.menuopen span {color: white;};  
+
+
+
+
+	// start-messy-page
+.messy-banner{height: 550px;width: 100%;position: relative;z-index:1;margin-bottom:48px;
+	
+		.banner-inner{@include column();margin-left:71px;
+					p{margin-top: 283px; color: #FFFFFF;font-size: 22px;margin-bottom: 18px;}
+					h1{font-size: 43px;color: #FFFFFF;}
+				
+				}
+			
+				}
+		
+// about-messy-church
+	.about-messy-church{margin: 0 20px;
+			img{width: 100%;object-fit: contain;}
+			.heading{margin-top: 100px;font-family: $regular;font-size: 22px;margin: 90px 0 24px 0;}
+			h2{font-size: 30px;font-family: $regular;margin-bottom: 12px;}
+					p{font-size: 22px;font-family: $italic;}
+		
+					.about-messy-details{margin-top: 30px;
+						p{font-size: 22px;font-family: $regular;line-height: 1.3;margin: 22px 12px  0 12px;}
+					}
+					
+				}
+		
+	// start-testimonials
+	.testimonials{margin: 80px 2% 0 2%;
+		 img{object-fit: contain;width: 100%;height: 450px;}
+				 .test-infr{margin: 0;
+		
+			h4{font-size: 24px;margin: 4px 0 12px 0;}
+				.test-details{font-family: $regular;font-size: 22px;line-height: 30npx;margin-bottom: 18px;}
+					.further-details{font-size: 21px;font-size: $medium;margin-bottom: 0;}
+				 }
+				}
+
+				.gallery{
+					margin-left:2%;margin-right: 2%;;
+				}
+
+// donations
+
+				.message{
+					p{margin: 0 13%;}
+				}
+
+				// start-latest-sermons
+
+.latest-semons{margin-bottom: 116px;
+	.fas{position: absolute;top:18%;padding:12px;border-radius: 50%;left: 50%;color: white;}
+	
+	  h2{margin-bottom: 20px;font-size: 35px;text-align: center;} 
+	  img{margin-bottom: 38px;}
+	  p{margin-bottom: 16px;font-size: 26px;
+
+	}
+
+}
+
+// end-latest-sermons
+
+				
+}
+
+
+
+@media (width: 812px) {
+
+
+	.children-church-banner{ height: 400px;width: 100%;
+	
+		.banner-inner{@include column();margin-left:20px;
+			p{margin-top: 203px; color: #FFFFFF;font-size: 26px;margin-bottom: 0;}
+			h1{font-size: 40px;color: #FFFFFF;}
+		
+		}
+	
+		}
+
+		.about-children-church{margin: 80px 72px 0 72px;
+			.iconi{left:40%;}
+		img{height: 436px;}
+
+		.children-heading{margin-bottom: 6px;font-size: 21px;}
+		p{font-family: $regular;font-size: 16px;}
+		ol{font-size: 16px;margin: 15px 18px;}
+		}
+		// activities-for-children
+		.activities-for-children{margin-bottom: 80px;margin-top: 0;
+		}
+
+		// .church-activities-for-children
+		.church-activities-details{ margin:0 3%;
+			text-align: center;
+			.detail1{margin:0  ;font-size: 19px;}
+			.detail2{margin:4% 1%;font-size: 19px;}
+			.detail3{margin:0 ;font-size: 19px;}
+			.detail4{margin:4% ;font-size: 19px;}
+			
+		}
+		.gallery{margin-top: 80px;margin-bottom:6px;
+		
+		img{height: 190px;object-fit: cover;padding:0;}
+	}
+
+	
+
+
+// // start-header
+ .head{position: absolute;top:34px;z-index: 200;display:flex;flex-direction:row;width:100%;
+
+	.nav-contact{ display: flex;width:100%;justify-content:space-between;position:fixed;top:0;background-color:$heading;padding:10px 0;
+		  .call-us{color:white;z-index: 8;display: flex;font-size: 14px;margin-right: 7px;line-height: 1.9;position:fixed;}
+  }
+
+  .menuopen{top: 1rem;left: 1rem;width: 20px;height: 20px;cursor: pointer;z-index: 1;margin-left:30px;
+		  span{display: flex;width: 20px;height: 2px;background-color:white;margin-top: 3px;z-index: 999;
+		  
+		  }
+			  }
+
+.nav{ position: fixed;top: 0; left: -40%; width: 40%;height: 100vh;transition: 0.5s;}
+	.nav.active{position: fixed;top: 0;left: 0;width: 300px;height: 750px;background:$pink;transition: 0.5s;z-index: 5;}
+	 .nav ul{ position: absolute; top: 28%; transform: translateY(-50%); width: 100%;
+		   li {margin-top: 15px;padding-left:38px;
+		  a{color: black;text-decoration: none;font-size: 18px;font-family: $medium;}
+		  }
+			}
+				.menuclose{position: absolute;top: 1rem;right: 1rem;width: 18px;height: 18px;cursor: pointer;
+					   span{display: flex;width: 20px;height: 2px;background-color: black;}
+						   }
+						.menuclose :nth-child(1){position: absolute;left: -2px;top: 7px;transform: rotate(45deg);}
+						.menuclose :nth-child(2){position: absolute;left: -2px;top: 7px;transform: rotate(135deg);}
+						.call-us{font-size: 16px!important;position: relative;left: 70%;}
+						  }
+						  
+// // end-header
+
+
+
+
+// start-latest-sermons
+
+.latest-semons{margin-bottom: 116px;
+	.fas{position: absolute;top:10%;padding:12px;border-radius: 50%;left: 30%;color: white;}
+	
+	  h2{margin-bottom: 72px;font-size: 35px;text-align: center;} 
+	  img{margin-bottom: 38px;}
+	  p{margin-bottom: 16px;font-size: 26px;
+
+	}
+
+}
+
+// end-latest-sermons
+
+
+.notices{background-color: #8DDED2;padding: 80px 20px 50px 20px;
+	h3{	color: $heading;font-size: 24px;font-family: $medium;}
+	h2{font-size: 35px;margin-top:29px;margin-bottom: 36px;font-family: $medium;}
+.acc{background-color:white;margin-bottom: 50px;padding:34px 30px 42px 28px; 
+ .accordion_head { cursor: pointer;font-size:19px;font-family:$medium;padding-left: 0;
+ }
+ .accordion_body p {
+	 margin-right: 10px;font-size: 17px;font-family: $regular;margin-top: 29px;line-height: 1.3;
+ }
+
+
+.plusminus {
+ float:right;
+font-size: 24px;font-family: $thin;position: relative;top:-6px;
+
+}
+   
+}
+ 
+}
+
+// // start-footer-section
+.footer{margin:40px 0 0 0;
+
+ 
+ .contact-details{
+	 p{margin-bottom: 23px;font-family:$Futura;font-size:15px;
+		 span{display: block;}
+	 }
+ 
+ }
+
+ .contact-form{
+	p{font-size: 20px;font-family: $medium;margin-left:40px;}
+    input[type="text"]{font-size: 15px;color: #F0F0F0;width: 100%;height:30px;border: 1px solid #F0F0F0;margin-top:25px;margin-bottom: 20px;padding-left: 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+     input[type="email"]{font-size: 15px;color: #F0F0F0;width: 100%;height: 30px;border: 1px solid #F0F0F0;margin-bottom: 20px;padding-left: 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+    textarea{width: 100%;height: 65px;border: 1px solid #F0F0F0;margin-bottom: 20px;color: #F0F0F0;font-size: 15px;padding: 15px 0 0 15px;border: 1px solid #F0F0F0;font-family: $regular;}
+	.send {text-decoration: none;color: white;background-color: $btncolor;height: 45px;width: 200px;font-size: 20px;font-family: $medium;border: none;
+	
+	}
+
+}
+
+ .additional-infr{
+	 .additional-infr-heading{font-size: 20px;margin-top:0;}
+	   .links{margin-top: 25px;
+	  a{font-size: 14px;}
+ }
+ 
+	 
+	 .send {width: 150px;font-size: 18px;height: 40px;margin-top:20px;position: relative;left:0;}
+  }
+ 
+ }
+ 
+ // end-footer-section
+
+
+// team-page
+.the-team{margin: 0 38px;
+	h2{text-align: center;font-size: 32px;margin-bottom: 50px;}
+	.header{text-align: center;color: $heading;margin-top: 100px;font-size: 24px;margin-bottom: 23px;}
+	p{color: $black;}
+	// .team-inner{
+ .t{img{width: 100%;}
+	h3{font-size: 25px;margin:15px 0 15px 0;}
+	.lead-pastor{color: $heading;font-size: 20px;font-size: $regular;}
+	.pastor-infr{font-size: 14px;color: $black;font-family: $regular;margin:15px 0 50px 0;line-height: 20px;}
+
+}
+
+}
+
+
+	//   church-funds
+	.church-funds{
+		.church-funds-inner{text-align: center;margin: 88px 15px 0 15px;
+		h3{font-size: 24px;color: $heading;margin-bottom: 36px;}
+		h2{font-size: 30px;margin-bottom: 30px;}
+		p{font-size: 20px;line-height: 1.3;margin:0;}
+		img{width: 100%;margin-top: 80px;margin-bottom: 80px;}
+}
+
+ .raised-funds{margin:0;background-color:#EBE6DD;padding: 100px 48px;margin-bottom:50px;
+
+	.line1{width:100%; height: 1px;background-color:#979797;padding:0 109px;margin-top: 5px;}
+	.line2{background-color: $black;width:80%; height: 3px;bottom:-125%;
+	
+	}
+	.milestone{display: flex;justify-content: flex-end;margin-right: 30px;color: $heading;
+
+	}
+	.raised-funds-details{display: flex;justify-content: space-between;
+	p{margin-top: 33px;font-size: 16px;font-family: $regular;color: #1C0902;}
+	}
+
+}
+.funds-btn {display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: auto;
+width: 200px;font-size: 20px;}
+	}
+
+	.message{ 
+	h2{font-size: 30px;margin-top: 70px;margin-bottom: 10px;}
+	p{font-size: 20px ;text-align: center; margin: 10px  4% 90px 4% ;}
+	}
+
+	
+		
+
+
+
+	.about-all{padding-top: 84px;display: flex;justify-content:space-evenly;
+		 
+		.about-img{width: 200px;height: 200px;background-position:center;background-size:cover;
+		.overlay{ 
+			a{position:absolute;top: 40%;left: 55%;transform: translate(-50%, 50%);font-size: 18px;color: $white;font-family: $bold;z-index: 2;}
+			}
+		}
+	
+			.about-img2{width: 200px;height: 200px;background-position:center; background-size:cover;
+				.overlay{ 
+					a{position:absolute;top: 40%;left: 65%;transform: translate(-50%, 50%);font-size: 18px;color: $white;font-family: $bold;z-index: 2;width:100%;}
+					}
+				}
+			
+			.about-img3{width: 200px;height: 200px;background-position:center; background-size: cover;
+			.overlay{ 
+				a{position:absolute;top: 40%;left: 50%;transform: translate(-50%, 50%);font-size: 18px;color: $white;font-family: $bold;z-index: 2;}
+				}
+			}
+		}
+	
+
+
+	// start-about section
+.about-church{padding-top: 84px;display:flex;justify-content:space-evenly;
+	.about-img{position: relative;margin:0 8% 5% 8%;
+		img{width: 100%;padding-right: 0;object-fit: cover;}
+		.overlay{ 
+		p{position:absolute;top: 40%;left: 80%;transform: translate(-50%, 50%);font-size: 26px;color: $white;font-family: $bold;width: 100%;}
+		}
+
+	
+
+	}
+}
+
+
+.about-us{text-align: center;
+   h3{font-size: 24px;color: $heading;font-weight: $regular;margin-bottom: 20px;font-family: $regular;}
+   h2{font-size: 30px;margin-bottom: 25px;font-family: $regular;}
+   p{margin-bottom: 20px;font-size: 18px;font-family: $regular;text-align: center;}
+   .middle{font-family: $regular;margin: auto;margin-bottom: 20px;}
+}
+
+
+// meetings
+.meetings{
+	h2{margin: 60px 0 20px 0;text-align: center;font-size: 24px;color: $heading;}
+	.meeting{display: flex;justify-content:center;flex-direction:row;flex-wrap:wrap;
+
+   .meeting-ifr1{ display: flex;margin:0 20px;
+.card1{margin-right: 4px;}
+}
+
+	img{display: none;}
+	.card1{margin:  20px auto ;}
+	
+	.card2{margin:auto;width:600px;
+		.date{padding-top: 41px;font-size:20px;
+			span{display: block;padding-bottom: 13px;font-size:22px;}
+		}
+		p{font-size: 22px;line-height: 1.3;}
+			.text{margin-top: 21px;margin-bottom: 39px;font-size: 18px;line-height: 1.3;margin-right: 35px;margin-left: 35px;font-family: $regular;}
+	
+}
+	.sunset{width: 100%;margin-left:0;margin-top: 35px;display: none;}
+}
+}
+
+	
+
+#video__play__centerButton {display:flex;position:absolute;justify-content: center;align-items: center;cursor: pointer;opacity: .8;
+transition: all .8s ease-in-out;top: 25%;left:50%;color: white;border: 8px solid white;border-radius: 93px;padding: 30px 35px;
+		}
+
+// start-latest-sermons
+.latest-semons{margin-bottom: 75px!important;text-align:center;
+	.fas{position: absolute;top:20%;padding:12px;border-radius: 50%;left: 50%;color: white;font-size: 30px;transform: translate(-50%, 50%);}
+	  h3{margin: 91px 0 30px 0;text-align: center;font-size: 20px;color: $heading;}
+	  h2{font-size: 30px;margin-bottom: 20px; }
+	  a{font-size: 16px;margin-left: 0;}
+	
+.latest-s-header{font-size:16px;}
+	
+	.date{font-size: 16px;color: $heading;}
+}
+
+
+
+
+
+
+}
+
+
+
